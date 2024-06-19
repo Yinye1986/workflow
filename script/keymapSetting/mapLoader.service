@@ -1,0 +1,8 @@
+[Unit]
+Description=mapLoader
+
+[Service]
+ExecStart=/usr/bin/loadkeys colemak
+
+[Install]
+WantedBy=multi-user.target
