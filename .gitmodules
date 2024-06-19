@@ -1,0 +1,3 @@
+[submodule "homeDir/dotConfig/nvim"]
+	path = homeDir/dotConfig/nvim
+	url = https://github.com/Yinye1986/nvim.git
