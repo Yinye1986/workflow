@@ -1,21 +1,9 @@
 蓝牙脚本 安装 快速连接
-wifi快速连接
-
-
-声音
-
-
-
-
 
 快捷键执行对应脚本
 
-onlyoffice
 firefox
 
-
-
-alsa-util
 blueman
 pm-util (yay
 

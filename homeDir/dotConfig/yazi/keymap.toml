@@ -35,12 +35,6 @@ keymap = [
     { on = [ "<C-PageUp>" ],   run = "arrow -50%",  desc = "Move cursor up half page" },
     { on = [ "<C-PageDown>" ], run = "arrow 50%",   desc = "Move cursor down half page" },
 
-
-
-
-	{ on = [ "g", "[" ], run = "back",    desc = "Go back to the previous directory" },
-	{ on = [ "g", "]" ], run = "forward", desc = "Go forward to the next directory" },
-
 	{ on = [ "<A-u>" ], run = "seek -5", desc = "Seek up 5 units in the preview" },
 	{ on = [ "<A-e>" ], run = "seek 5",  desc = "Seek down 5 units in the preview" },
 	{ on = [ "<A-PageUp>" ],   run = "seek -5", desc = "Seek up 5 units in the preview" },
@@ -139,7 +133,7 @@ keymap = [
 
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
+	{ on = [ "g", "c" ],       run = "cd ~/WORKFLOW/homeDir/dotConfig/",     desc = "Go to the config directory" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
 	{ on = [ "g", "<Space>" ], run = "cd --current", desc = "Go to a directory interactively" },
