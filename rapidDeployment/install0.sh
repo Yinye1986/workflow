@@ -16,7 +16,7 @@ fdisk ${yourdisk}
 # esp
 mkfs.fat -F 32 ${yourdisk}p1
 # swap
-mkswap ${yourdiskN}p2
+mkswap ${yourdisk}p2
 swapon ${yourdisk}p2
 # config
 mkfs.ext4 ${yourdisk}p3

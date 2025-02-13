@@ -48,4 +48,4 @@ function lf --wraps="lf" --description="lf - Terminal file manager (changing dir
     # Quotes will cause `cd` to not change directory if `lf` prints nothing to stdout due to an error.
     cd "$(command lf -print-last-dir $argv)"
 end
-thefuck --alias | source
+# thefuck --alias | source

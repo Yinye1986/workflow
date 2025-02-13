@@ -34,6 +34,8 @@ while true; do
 	fi
 done
 
+localectl set-keymap colemak
+localectl set-x11-keymap us colemak
 locale-gen
 
 echo "LANG=zh_CN.UTF-8" >> /etc/locale.conf
@@ -59,7 +61,7 @@ done
 
 grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=GRUB
 
-# os-prober
+os-prober
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -76,16 +78,6 @@ pacman -S yazi lazygit fzf thefuck # 必备组件
 pacman -S htop fastfetch # 仪表盘
 
 pacman -S ttf-hack ttf-hack-nerd wqy-zenhei wqy-microhei font-manager # 字体
-LOADKEYS_SERVICE_FILE_PATH="/etc/systemd/system/loadkeysColemak.service"
-echo "[Unit]
-Description=Load colemak keymap
-
-[Service]
-ExecStart=/usr/bin/loadkeys colemak
-
-[Install]
-WantedBy=multi-user.target" >$LOADKEYS_SERVICE_FILE_PATH
-systemctl enable loadkeysColemak.service
 
 systemctl enable iwd
 systemctl enable dhcpcd
