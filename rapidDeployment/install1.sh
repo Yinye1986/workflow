@@ -35,7 +35,6 @@ while true; do
 done
 
 localectl set-keymap colemak
-localectl set-x11-keymap us colemak
 locale-gen
 
 echo "LANG=zh_CN.UTF-8" >> /etc/locale.conf

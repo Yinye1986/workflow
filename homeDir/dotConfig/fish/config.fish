@@ -3,7 +3,6 @@ if status is-interactive
 end
 
 # My alias
-alias d="sqlite3"
 alias :q="exit"
 
 alias ll="ls -lh"
@@ -11,10 +10,8 @@ alias la="ls -lah"
 alias lld="lsblk"
 alias llu="lsusb"
 
-alias t="tmux"
-alias fm="yazi"
-
-alias bak='bash ~/WORKFLOW/homeDir/dotScript/repoBackup.sh'
+alias bak='bash /const/workflow/homeDir/dotScript/repoBackup.sh'
+alias updateGithubHosts='bash /const/workflow/homeDir/dotScript/updateGithubHost.sh'
 
 alias ca='sudo st-flash erase'
 alias xie='sudo st-flash write build/main.bin 0x8000000'
