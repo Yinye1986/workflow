@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# SCRIPT_DIR=$(dirname "$(realpath "$0")")脚本所在位置
 pacman -Syy
 
 pacman -S amd-ucode mesa mesa-utils xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau sudo fish neovim --noconfirm
@@ -75,6 +76,7 @@ pacman -S fcitx5-im fcitx5-rime fcitx5-nord --noconfirm # 输入法全家桶
 pacman -S alacritty waybar rofi-wayland
 pacman -S yazi lazygit fzf thefuck # 必备组件
 pacman -S htop fastfetch # 仪表盘
+pacman -S cowsay # 趣味工具
 
 pacman -S ttf-hack ttf-hack-nerd wqy-zenhei wqy-microhei font-manager # 字体
 

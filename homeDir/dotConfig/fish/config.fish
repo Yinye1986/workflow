@@ -1,5 +1,9 @@
+cowsay -e @@ "I love Linux"
+set -g fish_greeting ""
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # cmd
+else
+    # cmd
 end
 
 # My alias
@@ -10,6 +14,8 @@ alias la="ls -lah"
 alias lld="lsblk"
 alias llu="lsusb"
 
+alias sn="shutdown now"
+
 alias bak='bash /const/workflow/homeDir/dotScript/repoBackup.sh'
 alias updateGithubHosts='bash /const/workflow/homeDir/dotScript/updateGithubHost.sh'
 
@@ -19,19 +25,6 @@ alias cl='make clean'
 alias mk='make'
 alias tiao='sudo openocd -f stlink.cfg'
 alias done='mk & ca & xie'
-
-# My Apps
-alias d='go run main.go --alac-max 192000 --select'
-
-function pi
-    sudo pacman -S $argv
-end
-function ps
-    sudo pacman -Ss $argv
-end
-function pu
-    sudo pacman -Rns $argv
-end
 function fm
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -45,4 +38,15 @@ function lf --wraps="lf" --description="lf - Terminal file manager (changing dir
     # Quotes will cause `cd` to not change directory if `lf` prints nothing to stdout due to an error.
     cd "$(command lf -print-last-dir $argv)"
 end
+
+# My Apps
+# alias d='go run main.go --alac-max 192000 --select'
 # thefuck --alias | source
+
+bind \cu history-search-backward
+bind \ce history-search-forward
+bind \cn backward-char
+bind \ci forward-char
+bind \cb backward-kill-line
+bind \t complete
+
