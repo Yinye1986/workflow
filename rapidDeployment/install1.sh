@@ -1,6 +1,6 @@
 #!/bin/bash
+# SU
 
-# SCRIPT_DIR=$(dirname "$(realpath "$0")")脚本所在位置
 pacman -Syy
 
 pacman -S amd-ucode mesa mesa-utils xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau sudo fish neovim --noconfirm

@@ -1,4 +1,5 @@
 #!/bin/bash
+# SU
 
 # systemctl stop reflector.service
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# NU
 
 ln -sf /const/workflow/homeDir/.bash_profile /home/chris/.bash_profile
 ln -sf /const/workflow/homeDir/.bashrc /home/chris/.bashrc

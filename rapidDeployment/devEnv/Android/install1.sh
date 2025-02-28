@@ -1,4 +1,5 @@
 #!/bin/bash
+# NU
 
 # 安装SDK(lib, ...)
 sdkmanager "platforms;android-33"

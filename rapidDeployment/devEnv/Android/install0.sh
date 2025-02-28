@@ -1,4 +1,5 @@
 #!/bin/bash
+# NU
 
 # 下载最新版本cmdline-tools
 # wget ...
