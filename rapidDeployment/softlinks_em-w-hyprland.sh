@@ -18,6 +18,7 @@ ln -sf /const/workflow/homeDir/dotConfig/rofi /home/chris/.config/rofi
 ln -sf /const/workflow/homeDir/dotConfig/hypr /home/chris/.config/hypr
 ln -sf /const/workflow/homeDir/dotConfig/waybar /home/chris/.config/waybar
 ln -sf /const/workflow/homeDir/dotConfig/clash /home/chris/.config/clash
+ln -sf /const/workflow/homeDir/dotConfig/clangd /home/chris/.config/clangd
 
 mkdir /home/chris/.local
 
