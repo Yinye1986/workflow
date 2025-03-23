@@ -132,6 +132,7 @@ keymap = [
 	# Goto
     { on = [ "g", "h" ],       run = "cd ~"},
 	{ on = [ "g", "c" ],       run = "cd /const/workflow/homeDir/dotConfig/"},
+	{ on = [ "g", "l" ],       run = "cd ~/.local"},
 	{ on = [ "g", "/" ],       run = "cd /"},
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },

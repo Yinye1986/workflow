@@ -1,2 +1,2 @@
 CompileFlags:
-  Add: [-I/usr/include/qt, -I/usr/include/qt/QtWidgets, -I/usr/include/qt/QtGui]
+  Add: [-I/usr/include/qt, -I/usr/include/qt/QtWidgets, -I/usr/include/qt/QtGui, -I/usr/include/qt/QtCore]

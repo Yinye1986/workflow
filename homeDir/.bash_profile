@@ -5,6 +5,11 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     export RUSTUP_DIST_SERVER="https://rsproxy.cn"
     export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
+
+
+
+    export CZ_ANDROID_SDK_DIR=$HOME/Android/Sdk
+
     Hyprland
 fi
 
