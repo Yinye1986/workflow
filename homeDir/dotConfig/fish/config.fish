@@ -13,6 +13,7 @@ alias ll="ls -lh"
 alias la="ls -lah"
 alias lld="lsblk"
 alias llu="lsusb"
+alias ff="fastfetch"
 
 alias sn="shutdown now"
 

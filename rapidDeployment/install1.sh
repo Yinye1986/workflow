@@ -9,13 +9,12 @@ useradd -m chris
 usermod -aG wheel chris
 passwd root
 passwd chris
-
 echo "Uncomment wheel"
 nvim /etc/sudoers
 
 while true; do
-	read -p "If Done, Please 'OK': " input
-	if [ "$input" = "OK" ]; then
+	read -p "If Done, Please 'Y': " input
+	if [ "$input" = "Y" ]; then
 		break
 	fi
 done
@@ -35,41 +34,32 @@ while true; do
 	fi
 done
 
-localectl set-keymap colemak
 locale-gen
 
-echo "LANG=zh_CN.UTF-8" >> /etc/locale.conf
-
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "hcz" >> /etc/hostname
-
 echo "127.0.0.1    localhost" >> /etc/hosts
 echo "::1          localhost" >> /etc/hosts
 echo "127.0.1.1    hcz.localdomain hcz" >> /etc/hosts
 
-pacman -S grub efibootmgr --noconfirm # os-prober
-
+pacman -S grub efibootmgr os-prober --noconfirm
 echo "Please Uncomment The Last Line"
-
 nvim /etc/default/grub
-
 while true; do
 	read -p "If Done, Please 'OK': " input
 	if [ "$input" = "OK" ]; then
 		break
 	fi
 done
-
 grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=GRUB
-
 os-prober
-
 grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman -S base-devel unzip zip p7zip unarchiver curl wget aria2 openssh git usb_modeswitch usbutils # basic module
-pacman -S iwd dhcpcd clash bluez bluez-utils blueman # bluetooth internet
+pacman -S iwd dhcpcd clash bluez bluez-utils blueman # 网络蓝牙
+pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol wireplumber # 音频全家桶
 
 pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland xorg-xwayland qt6-wayland qt5-wayland # wm wayland兼容层
-pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol wireplumber # 音频全家桶
 pacman -S wl-clipboard cliphist grim slurp # 剪切板支持,剪切板,截图,选取
 pacman -S fcitx5-im fcitx5-rime fcitx5-nord --noconfirm # 输入法全家桶
 
