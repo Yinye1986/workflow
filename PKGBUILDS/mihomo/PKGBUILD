@@ -1,0 +1,24 @@
+# Maintainer: ChrisHung <>
+pkgname=mihomo
+pkgver=1.19.3  # 根据实际版本更新
+pkgrel=1
+pkgdesc="Another Clash Kernel"
+arch=('x86_64')
+url="https://github.com/MetaCubeX/mihomo"
+options=(!debug strip)
+license=('MIT')
+source=(
+    "https://github.com/MetaCubeX/mihomo/releases/download/v${pkgver}/mihomo-linux-amd64-v${pkgver}.gz"
+)
+sha256sums=(
+    'def3d6a2199fbbd987c68f960c1cc01842e244fa44346b3538c584cd329d57a1'
+)
+
+prepare() {
+    gunzip -c "mihomo-linux-amd64-v${pkgver}.gz" > mihomo
+    chmod +x mihomo
+}
+
+package() {
+    install -Dm755 mihomo "$pkgdir/usr/bin/mihomo"
+}
