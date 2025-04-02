@@ -1,7 +1,0 @@
-set -x PATH $PATH "/home/chris/androidSDK/cmdline-tools/latest/bin"
-set -x PATH $PATH "/home/chris/androidSDK/emulator"
-set -x PATH $PATH "/home/chris/androidSDK/platform-tools"
-set -x PATH $PATH "/home/chris/androidSDK/build-tools/33.0.3"
-set -x ANDROID_SDK_ROOT "/home/chris/androidSDK"
-set -x ANDROID_USER_HOME "$HOME/.android/"
-set -x REPO_OS_OVERRIDE "linux"
