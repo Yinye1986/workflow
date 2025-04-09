@@ -1,0 +1,25 @@
+mixed-port: 7890 # HTTP(S) 和 SOCKS 代理混合端口
+allow-lan: true
+bind-address: "*" # 绑定 IP 地址，仅作用于 allow-lan 为 true，'*'表示所有地址
+authentication:  http,socks 入口的验证用户名，密码
+  - "username:password"
+skip-auth-prefixes:
+  - 127.0.0.1/8
+  - ::1/128
+lan-allowed-ips: # 允许所有IP段设备走代理
+  - 0.0.0.0/0
+  - ::/0
+lan-disallowed-ips: # 禁止连接的 IP 地址段，黑名单优先级高于白名单，默认值为空
+  # - 192.168.0.3/32
+find-process-mode: off
+mode: rule
+
+#自定义 geodata url
+geox-url:
+  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb"
+
+geo-auto-update: true # 是否自动更新 geodata
+geo-update-interval: 72 # 更新间隔，单位：小时
+
