@@ -19,6 +19,7 @@ alias sn="shutdown now"
 
 alias bak='bash /const/workflow/homeDir/dotScript/repoBackup.sh'
 alias updateGithubHosts='bash /const/workflow/homeDir/dotScript/updateGithubHost.sh'
+alias wxit="bash /const/workflow/homeDir/dotScript/wxit.sh"
 
 alias ca='sudo st-flash erase'
 alias xie='sudo st-flash write build/main.bin 0x8000000'
