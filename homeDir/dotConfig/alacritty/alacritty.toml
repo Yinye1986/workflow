@@ -100,22 +100,22 @@ bindings         = [
 
 [keyboard]
 bindings = [
-    { key = "Enter", mods = "Control", action = "ToggleViMode" },
+    { key = "O", mods = "Control", action = "ToggleViMode" },
+
     { key = "U", mode = "Vi|~Search", action = "Up" },
     { key = "E", mode = "Vi|~Search", action = "Down" },
     { key = "N", mode = "Vi|~Search", action = "Left" },
     { key = "I", mode = "Vi|~Search", action = "Right" },
-    { key = "U", mods = 'Control', mode = "Vi|~Search", action = "Right" },
-    { key = "E", mods = 'Control', mode = "Vi|~Search", action = "Right" },
-    { key = "N", mods = 'Control', mode = "Vi|~Search", action = "Right" },
-    { key = "I", mods = 'Control', mode = "Vi|~Search", action = "Right" },
+    { key = "N", mode = "Vi|~Search", mods = "Control", action = "SemanticLeft" },
+    { key = "I", mode = "Vi|~Search", mods = "Control", action = "SemanticRight" },
+
     { key = "Y", mode = "Vi|~Search", action = "Copy" },
+    { key = "P", mods = "Control", action = "Paste" },
     { key = "L", mode = "Vi|~Search", action = "SearchNext" },
-    { key = "L", mods = "Shift", mode = "Vi|~Search", action = "SearchPrevious" },
+    { key = "L", mode = "Vi|~Search", mods = "Shift", action = "SearchPrevious" },
+
     { key = "=", mods = "Control", action = "IncreaseFontSize" },
     { key = "-", mods = "Control", action = "DecreaseFontSize" },
-    { key = "P", mods = "Control", action = "Paste" },
-    { key = "I", mods = "Control", action = "ReceiveChar" },
 ]
 
 [general]
