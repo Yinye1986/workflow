@@ -1,4 +1,5 @@
-import std.console.Console
+import std.convert.*
+import std.console.*
 
 class Node {
     let data: Int64
@@ -161,40 +162,33 @@ main() {
         Console.stdOut.writeln("10. 退出")
         
         Console.stdOut.write("请选择操作: ")
-        choice = toInt64(Console.stdIn.readln())
+        choice = Int64.parse(Console.stdIn.readln().getOrThrow())
         
         match (choice) {
-            case 1 => { =>
+            case 1 =>
                 Console.stdOut.write("请输入数值: ")
-                let value = Console.stdIn.readln().getOrThrow().toInt64().getOrElse(0)
+                let value = Int64.parse(Console.stdIn.readln().getOrThrow())
                 list.addAtHead(value)
-            }
-            case 2 => { =>
+            case 2 =>
                 Console.stdOut.write("请输入数值: ")
-                let value = Console.stdIn.readln().getOrThrow().toInt64().getOrElse(0)
+                let value = Int64.parse(Console.stdIn.readln().getOrThrow())
                 list.addAtTail(value)
-            }
-            case 3 => { =>
+            case 3 =>
                 Console.stdOut.write("请输入数值: ")
-                let value = Console.stdIn.readln().getOrThrow().toInt64().getOrElse(0)
+                let value = Int64.parse(Console.stdIn.readln().getOrThrow())
                 Console.stdOut.write("请输入位置: ")
-                let pos = Console.stdIn.readln().getOrThrow().toInt64().getOrElse(1)
+                let pos = Int64.parse(Console.stdIn.readln().getOrThrow())
                 list.insertAt(pos, value)
-
-            }
             case 4 => list.delAtHead()
             case 5 => list.delAtTail()
-            case 6 => { =>
+            case 6 =>
                 Console.stdOut.write("请输入删除位置: ")
-                //  TODO:  Replace  with  correct  Option  handling  methods
-                let pos = Console.stdIn.readln().getOrThrow().toInt64().getOrElse(1)
+                let pos = Int64.parse(Console.stdIn.readln().getOrThrow())
                 list.deleteAt(pos)
-            }
             case 7 => list.reverseByIterative()
-            case 8 => { =>
+            case 8 =>
                 Console.stdOut.write("当前链表: ")
                 list.printList()
-            }
             case 9 => Console.stdOut.writeln("节点数量: " + list.countNodes().toString())
             case 10 => isRunning = false
             case _ => Console.stdOut.writeln("无效输入")
