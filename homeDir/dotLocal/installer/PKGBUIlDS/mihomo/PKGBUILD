@@ -1,6 +1,6 @@
 # Maintainer: ChrisHung <>
 pkgname=mihomo
-pkgver=1.19.3  # 根据实际版本更新
+pkgver=1.19.8  # 根据实际版本更新
 pkgrel=1
 pkgdesc="Another Clash Kernel"
 arch=('x86_64')
@@ -11,7 +11,7 @@ source=(
     "https://github.com/MetaCubeX/mihomo/releases/download/v${pkgver}/mihomo-linux-amd64-v${pkgver}.gz"
 )
 sha256sums=(
-    'def3d6a2199fbbd987c68f960c1cc01842e244fa44346b3538c584cd329d57a1'
+    '199b741e918fb6ae76e4e067fe6e1254da3e47cfeff3a416daa33708dc2cbefc'
 )
 
 prepare() {
