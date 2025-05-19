@@ -68,6 +68,8 @@ pacman -S yazi lazygit fzf thefuck # 必备组件
 pacman -S htop fastfetch # 仪表盘
 pacman -S cowsay # 趣味工具
 
+pacman -S arm-none-eabi-gcc arm-none-eabi-newlib stlink
+
 pacman -S ttf-hack ttf-hack-nerd wqy-zenhei wqy-microhei font-manager # 字体
 
 systemctl enable iwd

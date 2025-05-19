@@ -44,11 +44,3 @@ end
 # My Apps
 # alias d='go run main.go --alac-max 192000 --select'
 # thefuck --alias | source
-
-bind \cu history-search-backward
-bind \ce history-search-forward
-bind \cn backward-char
-bind \ci forward-char
-bind \cb backward-kill-line
-bind \t complete
-
