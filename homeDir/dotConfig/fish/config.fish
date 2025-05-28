@@ -8,14 +8,16 @@ end
 
 # My alias
 alias :q="exit"
+alias sn="shutdown now"
 
 alias ll="ls -lh"
 alias la="ls -lah"
 alias lld="lsblk"
 alias llu="lsusb"
-alias ff="fastfetch"
 
-alias sn="shutdown now"
+alias ff="fastfetch"
+alias lg="lazygit"
+
 
 alias bak='bash /const/workflow/homeDir/dotScript/repoBackup.sh'
 alias updateGithubHosts='bash /const/workflow/homeDir/dotScript/updateGithubHost.sh'

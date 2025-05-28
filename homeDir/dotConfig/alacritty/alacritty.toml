@@ -53,7 +53,7 @@ title = "Alacritty"
 dynamic_title = true
 
 [font]
-normal              = { family = "LXGW WenKai Mono", style = "Regular" } # 可以替换为你喜欢的字体和样式
+normal              = { family = "LXGWWenKaiMono Nerd Font", style = "Regular" } # 可以替换为你喜欢的字体和样式
 bold                = { style = "Bold" }                          # 可以添加family字段来指定不同的字体
 italic              = { style = "Italic" }                        # 可以添加family字段来指定不同的字体
 bold_italic         = { style = "Bold Italic" }                   # 可以添加family字段来指定不同的字体
