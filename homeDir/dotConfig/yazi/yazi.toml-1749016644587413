@@ -2,7 +2,7 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[mgr]
+[manager]
 ratio          = [ 1, 4, 3 ] # 各区比例八分之
 sort_by        = "alphabetical" # 排序方式
 sort_sensitive = true # 区分大小写
