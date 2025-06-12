@@ -59,8 +59,11 @@ pacman -S base-devel unzip zip p7zip unarchiver curl wget aria2 openssh git usb_
 pacman -S iwd dhcpcd clash bluez bluez-utils blueman # 网络蓝牙
 pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol wireplumber # 音频全家桶
 
-pacman -S hyprland hyprpaper hyprlock xdg-desktop-portal-hyprland xorg-xwayland qt6-wayland qt5-wayland # wm wayland兼容层
-pacman -S wl-clipboard cliphist grim slurp # 剪切板支持,剪切板,截图,选取
+pacman -S hyprland hyprpaper hyprlock \
+    hyprpolkitagent xdg-desktop-portal-hyprland \
+    xorg-xwayland qt6-wayland qt5-wayland # hyprEcoSys ipc组件 wayland兼容层
+pacman -S wl-clipboard \
+    cliphist grim slurp # wl-clipboard|xclip,剪切板,截图,选取
 pacman -S fcitx5-im fcitx5-rime fcitx5-nord --noconfirm # 输入法全家桶
 
 pacman -S alacritty waybar rofi-wayland
