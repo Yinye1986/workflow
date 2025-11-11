@@ -1,0 +1,17 @@
+set $pick_yank grim -g "$(slurp)" - | wl-copy && notify-send 'Yanked'
+set $pick_save grim -g "$(slurp)" $HOME/Screenshot/$(date '+%m月%d日%H:%M').png
+set $pick_edit grim -g "$(slurp)" - | swappy -f -
+
+set $mode_screenshot "\
+<span foreground='$color10'>󰄄</span> \
+<span foreground='$color10'><b>P</b></span>ick \
+<span foreground='$color10'><b>S</b></span>ave \
+<span foreground='$color10'><b>C</b></span>edit"
+
+mode --pango_markup $mode_screenshot {
+    $bindsym p mode "default", exec $pick_yank
+    $bindsym s mode "default", exec $pick_save
+    $bindsym c mode "default", exec $pick_edit
+    $bindsym Escape mode "default"
+}
+$bindsym $mod+s mode $mode_screenshot

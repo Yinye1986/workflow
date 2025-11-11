@@ -1,0 +1,40 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "background", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "clock",
+        "temperature"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "壹",
+            "2": "贰",
+            "3": "叁",
+            "4": "肆",
+            "5": "伍",
+            "6": "陆",
+            "7": "柒",
+            "8": "捌",
+            "9": "玖",
+            "10": "拾"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    }
+}
