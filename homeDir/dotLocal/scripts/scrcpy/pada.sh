@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 adb start-server
 adb connect 192.168.123.183:5555

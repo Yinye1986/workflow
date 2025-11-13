@@ -28,9 +28,10 @@ pacman -S brightnessctl
 
 # 窗口管理器及其生态
 #===============================
+## greetd
+pacman -S greetd greetd-tuigreet
 ## sway
-pacman -S sway swaybg \
-  sway-contrib
+pacman -S sway swaybg sway-contrib
 ## hyprland
 pacman -S hyprland hyprpaper hyprlock
 ## bar
@@ -38,7 +39,7 @@ pacman -S waybar
 ## polkit
 pacman -S polkit hyprpolkitagent polkit-gnome
 ## 通知组件
-pacman -S mako libnotify inotify-tools
+pacman -S mako libnotify
 ## 剪切板支持
 pacman -S wl-clipboard cliphist
 ## 启动器
