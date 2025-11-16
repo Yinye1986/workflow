@@ -40,7 +40,14 @@ alias padc='/const/workflow/homeDir/dotLocal/scripts/scrcpy/padc.sh'
 alias padx='pkill scrcpy & adb kill-server'
 alias bak='/const/workflow/homeDir/dotLocal/scripts/bak.sh'
 alias updateGithubHosts='/const/workflow/homeDir/dotLocal/scripts/updateGithubhost.sh'
-alias wxit="bash /const/workflow/homeDir/dotScript/wxit.sh"
+# alias wxit="bash /const/workflow/homeDir/dotScript/wxit.sh"
+
+# 多媒体托管服务
+#==============================================================
+alias clbin='curl -F "clbin=<-" https://clbin.com'
+function u4d
+    curl -F "file=@-;filename=.$argv[1]" https://x0.at/
+end
 
 # 专用命令
 #=======================================================

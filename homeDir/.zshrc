@@ -24,3 +24,11 @@ function fm() {
 alias b="arm-none-eabi-objcopy -O binary dev.elf dev.bin"
 alias ww="sudo st-flash write dev.bin 0x8000000"
 alias w="stm32flash -w dev.bin -v -g 0x0 /dev/ttyUSB0"
+
+# pnpm
+export PNPM_HOME="/home/shins0u/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
