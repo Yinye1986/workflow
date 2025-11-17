@@ -18,6 +18,11 @@ while true; do
 	fi
 done
 
+# 1 300M esp
+# 2 16G swap
+# 3 16G const
+# 4 64G /
+# 5 ... /home
 
 # esp
 mkfs.fat -F 32 ${yourdisk}p1
@@ -28,9 +33,12 @@ swapon ${yourdisk}p2
 mkfs.ext4 ${yourdisk}p3
 # root dir
 mkfs.ext4 ${yourdisk}p4
+mkfs.ext4 ${yourdisk}p5
+
 mount ${yourdisk}p4 /mnt
-mount --mkdir ${yourdisk}p3 /mnt/const
 mount --mkdir ${yourdisk}p1 /mnt/esp
+mount --mkdir ${yourdisk}p3 /mnt/const
+mount --mkdir ${yourdisk}p5 /mnt/home
 
 while true; do
 	read -p "If Done, Please 'Y': " input

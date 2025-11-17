@@ -11,13 +11,11 @@ pacman -S --needed --noconfirm zip unzip p7zip
 
 # 外设
 ## USB
-pacman -S --needed --noconfirm usb_modeswitch usbutils
+# pacman -S --needed --noconfirm usb_modeswitch usbutils
 ## 网络
-pacman -S --needed --noconfirm networkmanager iwd dhcpcd
-systemctl enable iwd
-systemctl enable dhcpcd
+pacman -S --needed --noconfirm networkmanager network-manager-applet
 ## 蓝牙
-pacman -S --needed --noconfirm bluez bluez-utils blueman
+pacman -S --needed --noconfirm bluez bluez-utils
 systemctl enable bluetooth
 ## 音频
 pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
@@ -30,10 +28,11 @@ pacman -S --needed --noconfirm brightnessctl
 #===============================
 ## greetd
 pacman -S --needed --noconfirm greetd greetd-tuigreet
+# systemctl enable greetd
 ## sway
-pacman -S --needed --noconfirm sway swaybg sway-contrib
+pacman -S --needed --noconfirm sway swaybg
 ## hyprland
-pacman -S --needed --noconfirm hyprland hyprpaper hyprlock
+# pacman -S --needed --noconfirm hyprland hyprpaper hyprlock
 ## bar
 pacman -S --needed --noconfirm waybar
 ## polkit
@@ -43,7 +42,10 @@ pacman -S --needed --noconfirm mako libnotify
 ## 剪切板支持
 pacman -S --needed --noconfirm wl-clipboard cliphist
 ## 启动器
-pacman -S --needed --noconfirm fuzzel rofi swappy
+pacman -S --needed --noconfirm fuzzel swappy
+## 截图选取
+pacman -S --needed --noconfirm grim slurp
+
 
 # 应用程序
 #===========================
@@ -52,9 +54,10 @@ pacman -S --needed --noconfirm alacritty
 ## shell
 pacman -S --needed --noconfirm fish
 ## cli工具集
-pacman -S --needed --noconfirm yazi lazygit
+pacman -S --needed --noconfirm yazi # lazygit
 pacman -S --needed --noconfirm helix
-pacman -S --needed --noconfirm fzf pacman-contrib
+pacman -S --needed --noconfirm fzf
+pacman -S --needed --noconfirm android-tools scrcpy
 ### 仪表盘
 pacman -S --needed --noconfirm btop fastfetch
 #-----------
@@ -64,3 +67,5 @@ pacman -S --needed --noconfirm fcitx5-im fcitx5-chinese-addons
 pacman -S --needed --noconfirm firefox
 ## 字体管理器及字体
 pacman -S --needed --noconfirm font-manager ttf-0xproto-nerd wqy-zenhei
+
+# yay -S ttf-lxgw-wenkai-mono-nerd

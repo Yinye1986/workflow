@@ -1,9 +1,10 @@
 #!/bin/bash
 
+
 pacman -Syyu
-pacman -S amd-ucode mesa xf86-video-amdgpu
-# 可选:mesa-utils vulkan-radeon libva-mesa-driver mesa-vdpau
-pacman -S sudo helix iwd dhcpcd
+pacman -S amd-ucode mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau
+pacman -S sudo helix networkmanager
+# iwd dhcpcd
 pacman -S grub efibootmgr os-prober --noconfirm
 
 
@@ -15,6 +16,10 @@ passwd root
 passwd shins0u
 echo "Uncomment wheel"
 helix /etc/sudoers
+
+# su shins0u
+# bash /const/workflow/softlinks.sh
+
 # 时间
 #=====================================
 timedatectl set-timezone Asia/Shanghai
@@ -45,5 +50,4 @@ grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=GRUB
 os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable iwd
-systemctl enable dhcpcd
+systemctl enable NetworkManager.service
