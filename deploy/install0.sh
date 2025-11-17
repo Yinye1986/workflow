@@ -1,7 +1,7 @@
 #!/bin/bash
 
 systemctl stop reflector.service
-# iwctl
+iwctl
 
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp 1

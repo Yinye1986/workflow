@@ -2,10 +2,13 @@
 
 
 pacman -Syyu
-pacman -S amd-ucode mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau
-pacman -S sudo helix networkmanager
-# iwd dhcpcd
-pacman -S grub efibootmgr os-prober --noconfirm
+pacman -S --needed --noconfirm amd-ucode mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau
+pacman -S --needed --noconfirm sudo helix git
+pacman -S --needed --noconfirm networkmanager network-manager-applet
+systemctl enable NetworkManager
+pacman -S --needed --noconfirm grub efibootmgr os-prober
+pacman -S --needed --noconfirm greetd greetd-tuigreet
+systemctl enable greetd
 
 
 # 用户
@@ -14,11 +17,18 @@ useradd -m shins0u
 usermod -aG wheel shins0u
 passwd root
 passwd shins0u
-echo "Uncomment wheel"
 helix /etc/sudoers
 
-# su shins0u
-# bash /const/workflow/softlinks.sh
+# 配置文件部署
+#==================================================
+cd /const
+git clone https://github.com/Yinye1986/workflow.git
+su shins0u
+bash /const/workflow/softlinks.sh
+exit
+chgrp -R shins0u /const
+chown -R shins0u /const
+chmod -R 755 /const
 
 # 时间
 #=====================================
@@ -49,5 +59,3 @@ helix /etc/default/grub
 grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=GRUB
 os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
-
-systemctl enable NetworkManager.service
