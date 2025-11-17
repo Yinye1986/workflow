@@ -40,4 +40,4 @@ ln -sf /const/workflow/homeDir/dotConfig/sway $HOME/.config/sway
 ln -sf /const/workflow/homeDir/dotConfig/waybar $HOME/.config/waybar
 ln -sf /const/workflow/homeDir/dotConfig/yazi $HOME/.config/yazi
 
-# ssh-keygen -t ed25519 -C "yinye1986@gmail.com"
+ssh-keygen -t ed25519 -C "yinye1986@gmail.com"

@@ -1,10 +1,18 @@
 {
   "layer": "top",
   "position": "top",
-  // "height": 30,
-  // "width": 2560,
+  // waybar外边距
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  // waybar大小
+  // "height": 0,
+  // "width": 0,
+  // 模块间距
+  "spacing": 0,
   "modules-left": [
-    "image",
+    "image#menu",
     "wlr/taskbar",
     "cava"
   ],
@@ -12,279 +20,18 @@
     "sway/workspaces"
   ],
   "modules-right": [
-    "custom/arrow-left",
     "idle_inhibitor",
+    "network",
+    "wireplumber#sink",
+    "wireplumber#source",
+    "backlight",
+    "battery",
     "cpu",
     "memory",
     "temperature",
-    "battery",
-    "network",
-    "backlight",
-    "wireplumber#sink",
-    "wireplumber#source",
-    // "group/info",
     "tray",
-    "clock",
-    "mpris"
+    // "mpris",
+    "clock"
   ],
-  "sway/workspaces": {
-      "disable-scroll": true,
-      "warp-on-scroll": false,
-      "all-outputs": true,
-      "format": "{icon}",
-      "format-icons": {
-          "1": "壹",
-          "2": "贰",
-          "3": "叁",
-          "4": "肆",
-          "5": "伍",
-          "6": "陆",
-          "7": "柒",
-          "8": "捌",
-          "9": "玖",
-          "10":"拾",
-          "urgent": "!",
-          "focused": "",
-          "default": "󰢤"
-      }
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": [
-      "󰛩",
-      "󱩎",
-      "󱩏",
-      "󱩐",
-      "󱩑",
-      "󱩒",
-      "󱩓",
-      "󱩔",
-      "󱩕",
-      "󱩖",
-      "󰛨"
-    ],
-    "on-scroll-down": "brightnessctl set 1%-",
-    "on-scroll-up": "brightnessctl set +1%",
-    "tooltip-format": "{percent}%"
-  },
-  "battery": {
-    "events": {
-      "on-charging-100": "notify-send -u normal 'Battery Full!'",
-      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
-      "on-discharging-warning": "notify-send -u normal 'Low Battery'"
-    },
-    "format": "{icon}",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
-    "interval": 5,
-    "states": {
-      "critical": 15,
-      "warning": 30
-    },
-    "tooltip-format": "{capacity}% {timeTo}"
-  },
-  "cava": {
-    "autosens": 1,
-    "bar_delimiter": 0,
-    "bars": 15,
-    "format-icons": [
-      "▁ ",
-      "▂ ",
-      "▃ ",
-      "▄ ",
-      "▅ ",
-      "▆ ",
-      "▇ ",
-      "█ "
-    ],
-    "framerate": 60,
-    "higher_cutoff_freq": 10000,
-    "input_delay": 1,
-    "lower_cutoff_freq": 50,
-    "method": "pipewire",
-    "monstercat": false,
-    "noise_reduction": 0.77,
-    "reverse": false,
-    "sleep_timer": 5,
-    "source": "auto",
-    "stereo": true,
-    "waves": false
-  },
-  "clock": {
-    "calendar": {
-      "format": {
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
-      },
-      "mode": "year",
-      "mode-mon-col": 3,
-      "on-click-right": "mode",
-      "on-scroll": 1,
-      "weeks-pos": "right"
-    },
-    "format": "{:%a, %b %d %Y - %H:%M}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
-  },
-  "cpu": {
-    "format": "{icon}",
-    "format-icons": [
-      ""
-    ],
-    "interval": 2,
-    "states": {
-      "critical": 90
-    }
-  },
-  "custom/arrow-left": {
-    "format": "  ",
-    "tooltip": false
-  },
-  "niri/workspaces": {
-    "all-outputs": true,
-    "disable-scroll": true,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1",
-      "10": "10",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9"
-    },
-    "tooltip": false
-  },
-  // "group/info": {
-  //   "drawer": {
-  //     "transition-duration": 300,
-  //     "transition-left-to-right": true
-  //   },
-  //   "modules": [
-  //     "custom/arrow-left",
-  //     "idle_inhibitor",
-  //     "cpu",
-  //     "memory",
-  //     "temperature",
-  //     "battery",
-  //     "network",
-  //     "backlight",
-  //     "wireplumber#sink",
-  //     "wireplumber#source"
-  //   ],
-  //   "orientation": "inherit"
-  // },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "image": {
-    "on-click": "exec fuzzel",
-    "on-click-right": "exec fuzzel-logout-menu",
-    "path": "@NixOS@",
-    "size": 14
-  },
-  "memory": {
-    "format": "{icon}",
-    "format-icons": [
-      ""
-    ],
-    "interval": 2,
-    "states": {
-      "critical": 80
-    }
-  },
-  "network": {
-    "format-disconnected": "󰖪",
-    "format-ethernet": "󰈀",
-    "format-wifi": "󰖩",
-    "interval": 5,
-    "on-click": "foot nmtui",
-    "tooltip-format": "{ifname} {bandwidthDownBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes} 󰈀",
-    "tooltip-format-wifi": "{essid} {bandwidthDownBytes} "
-  },
-  "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "max-length": 30,
-   	"player-icons": {
-  		"default": "▶"
-   	},
-   	"status-icons": {
-  		"paused": "⏸"
-   	},
-  },
-  "spacing": 0,
-  "temperature": {
-    "critical-threshold": 90,
-    "format": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "interval": 5,
-    "warning-threshold": 75
-  },
-  "tray": {
-    "icon-size": 13,
-    "spacing": 10,
-    "tooltip": false
-  },
-  "wireplumber#sink": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰕿",
-      "󰖀",
-      "󰕾"
-    ],
-    "format-muted": "󰝟",
-    "max-volume": 200,
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "scroll-step": 1,
-    "tooltip-format": "{volume}%"
-  },
-  "wireplumber#source": {
-    "format": "",
-    "format-muted": "",
-    "max-volume": 200,
-    "node-type": "Audio/Source",
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "scroll-step": 1,
-    "tooltip-format": "{volume}%"
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Everforest-Dark",
-    "on-click": "activate",
-    "on-click-right": "close",
-    "tooltip-format": "{title}"
+  "include": ["~/.config/waybar/modules.jsonc"],
   }
-}

@@ -2,6 +2,7 @@ set $pick_yank grim -g "$(slurp)" - | wl-copy && notify-send 'Yanked'
 set $pick_save grim -g "$(slurp)" $HOME/Screenshot/$(date '+%m月%d日%H:%M').png
 set $pick_edit grim -g "$(slurp)" - | swappy -f -
 set $pick_upload grim -g "$(slurp)" - | curl -F "file=@-;filename=.png" https://x0.at/ | tee >(wl-copy) >(xargs notify-send)
+
 set $mode_screenshot "\
 <span foreground='$color10'>󰄄</span> \
 <span foreground='$color10'><b>P</b></span>ick \

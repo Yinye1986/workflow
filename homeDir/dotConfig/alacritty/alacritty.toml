@@ -41,7 +41,7 @@ WTERM                 = "xterm-256color" # 指定终端类型为256色
 INIT_X11_SCALE_FACTOR = "2" # 缩放因子
 
 [window]
-dimensions      = { columns = 80,lines = 36 } #窗口尺寸；行/列；最小2；设为0则自动配置
+dimensions      = { columns = 120,lines = 80 } #窗口尺寸；行/列；最小2；设为0则自动配置
 position        = "None" # { x = 0, y = 0 } # 窗口启动位置，以像素数指定；如果位置是"None"，窗口管理器将处理放置
 padding         = { x = 0, y = 0 } # 在窗口周围添加的空白空间，单位为像素。此填充由DPI缩放，并且指定的值总是在两个对立面添加
 dynamic_padding = true # 是否将额外的填充均匀地分布在终端内容周围
