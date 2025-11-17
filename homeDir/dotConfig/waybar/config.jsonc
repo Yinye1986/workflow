@@ -1,20 +1,53 @@
 {
   "layer": "top",
   "position": "top",
+  // "height": 30,
+  // "width": 2560,
   "modules-left": [
     "image",
-    "niri/workspaces",
     "wlr/taskbar",
     "cava"
   ],
   "modules-center": [
+    "sway/workspaces"
   ],
   "modules-right": [
-    "group/info",
+    "custom/arrow-left",
+    "idle_inhibitor",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "network",
+    "backlight",
+    "wireplumber#sink",
+    "wireplumber#source",
+    // "group/info",
     "tray",
     "clock",
     "mpris"
   ],
+  "sway/workspaces": {
+      "disable-scroll": true,
+      "warp-on-scroll": false,
+      "all-outputs": true,
+      "format": "{icon}",
+      "format-icons": {
+          "1": "壹",
+          "2": "贰",
+          "3": "叁",
+          "4": "肆",
+          "5": "伍",
+          "6": "陆",
+          "7": "柒",
+          "8": "捌",
+          "9": "玖",
+          "10":"拾",
+          "urgent": "!",
+          "focused": "",
+          "default": "󰢤"
+      }
+  },
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}",
@@ -139,26 +172,25 @@
     },
     "tooltip": false
   },
-  "group/info": {
-    "drawer": {
-      "transition-duration": 300,
-      "transition-left-to-right": true
-    },
-    "modules": [
-      "custom/arrow-left",
-      "idle_inhibitor",
-      "cpu",
-      "memory",
-      "temperature",
-      "battery",
-      "network",
-      "backlight",
-      "wireplumber#sink",
-      "wireplumber#source"
-    ],
-    "orientation": "inherit"
-  },
-  "height": 0,
+  // "group/info": {
+  //   "drawer": {
+  //     "transition-duration": 300,
+  //     "transition-left-to-right": true
+  //   },
+  //   "modules": [
+  //     "custom/arrow-left",
+  //     "idle_inhibitor",
+  //     "cpu",
+  //     "memory",
+  //     "temperature",
+  //     "battery",
+  //     "network",
+  //     "backlight",
+  //     "wireplumber#sink",
+  //     "wireplumber#source"
+  //   ],
+  //   "orientation": "inherit"
+  // },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -204,7 +236,6 @@
   		"paused": "⏸"
    	},
   },
-  "position": "bottom",
   "spacing": 0,
   "temperature": {
     "critical-threshold": 90,
