@@ -26,8 +26,6 @@ pacman -S --needed --noconfirm brightnessctl
 
 # 窗口管理器及其生态
 #===============================
-## greetd
-pacman -S --needed --noconfirm greetd greetd-tuigreet
 # systemctl enable greetd
 ## sway
 pacman -S --needed --noconfirm sway swaybg
@@ -36,7 +34,7 @@ pacman -S --needed --noconfirm sway swaybg
 ## bar
 pacman -S --needed --noconfirm waybar
 ## polkit
-pacman -S --needed --noconfirm polkit hyprpolkitagent polkit-gnome
+pacman -S --needed --noconfirm polkit polkit-gnome
 ## 通知组件
 pacman -S --needed --noconfirm mako libnotify
 ## 剪切板支持
@@ -66,6 +64,6 @@ pacman -S --needed --noconfirm fcitx5-im fcitx5-chinese-addons
 ## 浏览器
 pacman -S --needed --noconfirm firefox
 ## 字体管理器及字体
-pacman -S --needed --noconfirm font-manager ttf-0xproto-nerd wqy-zenhei
+pacman -S --needed --noconfirm font-manager ttf-0xproto-nerd
 
 # yay -S ttf-lxgw-wenkai-mono-nerd
