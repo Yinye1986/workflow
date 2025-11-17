@@ -23,7 +23,7 @@ rm -rf $HOME/.config/mihomo
 rm -rf $HOME/.config/nvim_clear
 rm -rf $HOME/.config/pip
 rm -rf $HOME/.config/sway
-rm -rf $HOME/.config/nvim
+rm -rf $HOME/.config/waybar
 rm -rf $HOME/.config/yazi
 
 ln -sf /const/workflow/homeDir/dotConfig/alacritty $HOME/.config/alacritty
@@ -37,7 +37,7 @@ ln -sf /const/workflow/homeDir/dotConfig/mihomo $HOME/.config/mihomo
 ln -sf /const/workflow/homeDir/dotConfig/nvim_clear $HOME/.config/nvim_clear
 ln -sf /const/workflow/homeDir/dotConfig/pip $HOME/.config/pip
 ln -sf /const/workflow/homeDir/dotConfig/sway $HOME/.config/sway
-ln -sf /const/workflow/homeDir/dotConfig/nvim $HOME/.config/nvim
+ln -sf /const/workflow/homeDir/dotConfig/waybar $HOME/.config/waybar
 ln -sf /const/workflow/homeDir/dotConfig/yazi $HOME/.config/yazi
 
 # ssh-keygen -t ed25519 -C "yinye1986@gmail.com"

@@ -1,4 +1,20 @@
 {
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "image",
+    "niri/workspaces",
+    "wlr/taskbar",
+    "cava"
+  ],
+  "modules-center": [
+  ],
+  "modules-right": [
+    "group/info",
+    "tray",
+    "clock",
+    "mpris"
+  ],
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}",
@@ -156,7 +172,6 @@
     "path": "@NixOS@",
     "size": 14
   },
-  "layer": "top",
   "memory": {
     "format": "{icon}",
     "format-icons": [
@@ -167,20 +182,6 @@
       "critical": 80
     }
   },
-  "modules-center": [
-  ],
-  "modules-left": [
-    "image",
-    "niri/workspaces",
-    "wlr/taskbar",
-    "cava"
-  ],
-  "modules-right": [
-    "group/info",
-    "tray",
-    "clock",
-    "mpris"
-  ],
   "network": {
     "format-disconnected": "󰖪",
     "format-ethernet": "󰈀",

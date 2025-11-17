@@ -1,65 +1,66 @@
 #!/bin/bash
 
 # 基本工具集
-pacman -S base-devel
+pacman -S --needed --noconfirm base-devel
 
-pacman -S git openssh
+pacman -S --needed --noconfirm git openssh
 systemctl enable sshd
 
-pacman -S curl wget aria2
-pacman -S zip unzip p7zip
+pacman -S --needed --noconfirm curl wget aria2
+pacman -S --needed --noconfirm zip unzip p7zip
 
 # 外设
 ## USB
-pacman -S usb_modeswitch usbutils
+pacman -S --needed --noconfirm usb_modeswitch usbutils
 ## 网络
-pacman -S networkmanager iwd dhcpcd --needed
+pacman -S --needed --noconfirm networkmanager iwd dhcpcd
 systemctl enable iwd
 systemctl enable dhcpcd
 ## 蓝牙
-pacman -S bluez bluez-utils blueman
+pacman -S --needed --noconfirm bluez bluez-utils blueman
 systemctl enable bluetooth
 ## 音频
-pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
+pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
 ## 显示背光
-pacman -S brightnessctl
+pacman -S --needed --noconfirm brightnessctl
 
 
 
 # 窗口管理器及其生态
 #===============================
 ## greetd
-pacman -S greetd greetd-tuigreet
+pacman -S --needed --noconfirm greetd greetd-tuigreet
 ## sway
-pacman -S sway swaybg sway-contrib
+pacman -S --needed --noconfirm sway swaybg sway-contrib
 ## hyprland
-pacman -S hyprland hyprpaper hyprlock
+pacman -S --needed --noconfirm hyprland hyprpaper hyprlock
 ## bar
-pacman -S waybar
+pacman -S --needed --noconfirm waybar
 ## polkit
-pacman -S polkit hyprpolkitagent polkit-gnome
+pacman -S --needed --noconfirm polkit hyprpolkitagent polkit-gnome
 ## 通知组件
-pacman -S mako libnotify
+pacman -S --needed --noconfirm mako libnotify
 ## 剪切板支持
-pacman -S wl-clipboard cliphist
+pacman -S --needed --noconfirm wl-clipboard cliphist
 ## 启动器
-pacman -S fuzzel rofi swappy
+pacman -S --needed --noconfirm fuzzel rofi swappy
 
 # 应用程序
 #===========================
 ## 终端模拟器
-pacman -S alacritty
+pacman -S --needed --noconfirm alacritty
 ## shell
-pacman -S fish
+pacman -S --needed --noconfirm fish
 ## cli工具集
-pacman -S yazi lazygit
-pacman -S helix
+pacman -S --needed --noconfirm yazi lazygit
+pacman -S --needed --noconfirm helix
+pacman -S --needed --noconfirm fzf pacman-contrib
 ### 仪表盘
-pacman -S btop fastfetch
+pacman -S --needed --noconfirm btop fastfetch
 #-----------
 ## 输入法
-pacman -S fcitx5-im fcitx5-chinese-addons
+pacman -S --needed --noconfirm fcitx5-im fcitx5-chinese-addons
 ## 浏览器
-pacman -S firefox
+pacman -S --needed --noconfirm firefox
 ## 字体管理器及字体
-pacman -S font-manager wqy-zenhei
+pacman -S --needed --noconfirm font-manager ttf-0xproto-nerd wqy-zenhei
