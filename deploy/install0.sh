@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# systemctl stop reflector.service
+systemctl stop reflector.service
 # iwctl
 
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp 1
-timedatectl set-local-rtc 1
 
 vim /etc/pacman.conf
 
