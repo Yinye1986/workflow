@@ -14,7 +14,8 @@
   "modules-left": [
     "image#menu",
     "wlr/taskbar",
-    "cava"
+    "cava",
+    "sway/mode"
   ],
   "modules-center": [
     "sway/workspaces"
