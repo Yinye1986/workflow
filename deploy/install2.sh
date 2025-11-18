@@ -10,17 +10,17 @@ pacman -S --needed --noconfirm curl wget aria2
 pacman -S --needed --noconfirm zip unzip p7zip
 
 # 外设
-## USB
-# pacman -S --needed --noconfirm usb_modeswitch usbutils
+## 音频
+pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
 ## 网络
 pacman -S --needed --noconfirm networkmanager network-manager-applet
 ## 蓝牙
 pacman -S --needed --noconfirm bluez bluez-utils
 systemctl enable bluetooth
-## 音频
-pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
 ## 显示背光
 pacman -S --needed --noconfirm brightnessctl
+## USB
+# pacman -S --needed --noconfirm usb_modeswitch usbutils
 
 
 

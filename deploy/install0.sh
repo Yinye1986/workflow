@@ -1,13 +1,19 @@
 #!/bin/bash
 
+# 1. 关闭不需要的服务
 systemctl stop reflector.service
+
+# 2. 配置网络
 iwctl
 
+# 3. 配置系统时间
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-ntp 1
 
+# 4. 配置pacman及换源
 vim /etc/pacman.conf
 
+# 5. 分区, mkfs, mount
 lsblk
 read -p "Input Your Disk Like'/dev/nvme1n1':" yourdisk
 fdisk ${yourdisk}

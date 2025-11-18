@@ -21,11 +21,6 @@ helix /etc/sudoers
 
 # 配置文件部署
 #==================================================
-cd /const
-git clone https://github.com/Yinye1986/workflow.git
-su shins0u
-bash /const/workflow/softlinks.sh
-exit
 chgrp -R shins0u /const
 chown -R shins0u /const
 chmod -R 755 /const
@@ -56,6 +51,6 @@ echo "127.0.1.1    hcz.localdomain hcz" >> /etc/hosts
 
 # uncomment GRUB_DISABLE_OS_PROBER=false
 helix /etc/default/grub
-grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
