@@ -19,7 +19,6 @@
 
 window#waybar {
     background: @base00;
-    /* 圆角效果 */
     border-radius: 0px;
 }
 

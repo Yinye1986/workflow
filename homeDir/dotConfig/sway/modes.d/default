@@ -20,8 +20,8 @@ $bindsym $mod+grave scratchpad show, exec "waybar-signal scratchpad"
 
 # 聚焦
 #======================================
-# $bindsym $mod+space focus mode_toggle
-# $bindsym $mod+a focus parent
+# $bindsym $mod+ focus mode_toggle
+# $bindsym $mod+ focus parent
 
 # 移动
 #===================================

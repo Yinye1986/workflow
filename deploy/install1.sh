@@ -52,5 +52,4 @@ echo "127.0.1.1    hcz.localdomain hcz" >> /etc/hosts
 # uncomment GRUB_DISABLE_OS_PROBER=false
 helix /etc/default/grub
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
