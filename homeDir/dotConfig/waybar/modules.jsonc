@@ -31,12 +31,53 @@
         "9": "玖",
         "10":"拾",
         "urgent": "!",
-        "focused": "",
-        "default": "󰢤"
+        "focused": "!",
+        "default": "!"
     }
   },
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    }
+  },
+  "network": {
+    "format-disconnected": "",
+    "format-ethernet": "E",
+    "format-wifi": " ",
+    "interval": 5,
+    "on-click": "foot nmtui",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes}",
+    "tooltip-format-wifi": "{essid} {bandwidthDownBytes}"
+  },
+  "wireplumber#sink": {
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      " ",
+      " "
+    ],
+    "format-muted": "󰝟",
+    "max-volume": 200,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 1,
+    "tooltip-format": "{volume}%"
+  },
+  "wireplumber#source": {
+    "format": "",
+    "format-muted": "",
+    "max-volume": 200,
+    "node-type": "Audio/Source",
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "scroll-step": 1,
+    "tooltip-format": "{volume}%"
   },
   "backlight": {
     "device": "amdgpu_bl1",
@@ -85,31 +126,6 @@
     },
     "tooltip-format": "{capacity}% {timeTo}"
   },
-  "clock": {
-    "calendar": {
-      "format": {
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
-      },
-      "mode": "year",
-      "mode-mon-col": 3,
-      "on-click-right": "mode",
-      "on-scroll": 1,
-      "weeks-pos": "right"
-    },
-    "format": "{:%a, %b %d %Y - %H:%M}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": " ",
-      "deactivated": " "
-    }
-  },
   "cpu": {
     "format": "{icon}",
     "format-icons": [" "],
@@ -128,29 +144,6 @@
       "critical": 80
     }
   },
-  "network": {
-    "format-disconnected": "󰖪",
-    "format-ethernet": "󰈀",
-    "format-wifi": "󰖩",
-    "interval": 5,
-    "on-click": "foot nmtui",
-    "tooltip-format": "{ifname} {bandwidthDownBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes} 󰈀",
-    "tooltip-format-wifi": "{essid} {bandwidthDownBytes} "
-  },
-  "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "max-length": 30,
-   	"player-icons": {
-  		"default": "▶ "
-   	},
-   	"status-icons": {
-  		"paused": "⏸"
-   	},
-  },
-  "spacing": 0,
   "temperature": {
     "critical-threshold": 90,
     "format": "{icon}",
@@ -169,28 +162,22 @@
     "spacing": 10,
     "tooltip": false
   },
-  "wireplumber#sink": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰕿",
-      "󰖀",
-      "󰕾"
-    ],
-    "format-muted": "󰝟",
-    "max-volume": 200,
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "scroll-step": 1,
-    "tooltip-format": "{volume}%"
-  },
-  "wireplumber#source": {
-    "format": "",
-    "format-muted": "",
-    "max-volume": 200,
-    "node-type": "Audio/Source",
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "scroll-step": 1,
-    "tooltip-format": "{volume}%"
+  "clock": {
+    "calendar": {
+      "format": {
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+      },
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "on-scroll": 1,
+      "weeks-pos": "right"
+    },
+    "format": "{:%a, %b %d %Y - %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   }
 }

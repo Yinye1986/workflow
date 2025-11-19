@@ -4,7 +4,7 @@
     border: none;
     /* 最小高度, 以确保它们在没有内容时仍然可见 */
     min-height: 0;
-    font-family: "D2CodingLigature Nerd Font Propo";
+    font-family: "UbuntuMono Nerd Font";
     font-weight: 500;
     font-size: 15px;
     /* 文字间距 */
@@ -27,7 +27,6 @@ tooltip {
     font-size: 2px;
     color: @base05;
 }
-
 tooltip label {
     margin: 2px;
 }
@@ -39,7 +38,6 @@ window#waybar.empty #window {
 
 
 #image,
-#cava,
 #idle_inhibitor,
 #network,
 #wireplumber,
@@ -49,21 +47,17 @@ window#waybar.empty #window {
 #memory,
 #temperature,
 #tray,
-#mpris,
 #clock {
     padding: 2px 6px;
     border-radius: 4px;
 }
 
-#cava {
-    min-width: 20px;
-}
+
 #taskbar,
 #workspaces {
     background-color: @base00;
     border-radius: 4px;
 }
-
 #workspaces button {
     all: initial;
     min-width: 0;
@@ -75,7 +69,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button.active {
-    color: @base05;
+    color: @base02;
     background-color: @base01;
 }
 
@@ -84,7 +78,6 @@ window#waybar.empty #window {
     color: @base0A;
 }
 
-#cava.silent,
 #workspaces button.empty {
     background-color: transparent;
     color: transparent;
@@ -112,12 +105,6 @@ window#waybar.empty #window {
     color: @base05;
 }
 
-#cava {
-    background-color: @base00;
-    color: @base05;
-    padding-right: 0px;
-    padding-left: 6px;
-}
 
 #taskbar button {
     padding-left: 1px;

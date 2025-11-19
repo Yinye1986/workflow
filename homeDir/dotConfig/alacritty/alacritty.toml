@@ -15,18 +15,31 @@ position = "None" # { x = 0, y = 0 } # wm管理
 padding = { x = 0, y = 0 } # 边距
 dynamic_padding = true     # 均匀填充
 decorations = "None"       # 边框样式
-opacity = 0.5
-blur = true
-startup_mode = "Windowed"
-title = "Alacritty"
+opacity = 0.5              # 透明度
+blur = true                # 毛玻璃 # 仅 macOS/KDE Wayland
+startup_mode = "Windowed"  # 启动时窗口模式
+title = "Alacritty"        # 标题
 dynamic_title = true
+# class = { instance = "<string>", general = "this is a term" } # 仅 LINUX/BSD
+decorations_theme_variant = "None"
+# resize_increments = true   # 仅 macOS/X11
+# option_as_alt = "None"     # 仅 macOS
+level = "Normal"
 
 [scrolling]
-history    = 10000 # 滚动回溯缓冲区，不能超过100000；如果你想禁用滚动，可以设置为0。
-multiplier = 6 # 每次输入滚动增量时滚动的行数
+history    = 10000 # 滚动回溯缓冲区
+multiplier = 6     # 滚动行数
 
-# shell字段可以设置为你喜欢的shell的路径，例如/bin/zsh
-# shell.args中的条目将作为参数传递给shell
+[font]
+normal              = { family = "UbuntuMono Nerd Font", style = "Regular" }
+bold                = { style = "Bold" }
+italic              = { style = "Italic" }
+bold_italic         = { style = "Bold Italic" }
+size                = 17
+offset              = { x = 0, y = 0 } # 字间距 行间距
+glyph_offset        = { x = 0, y = 0 } # 在单元格内的位置
+builtin_box_drawing = true             # 可以设置为false来使用系统字体绘制盒子字符和电源线符号
+
 [terminal.shell]
 program = "/bin/fish"
 args    = [ "-l"]
@@ -60,16 +73,6 @@ thickness        = 0.1    # 失焦空心框厚度
 # 一些条目可能会覆盖由alacritty自身设置的变量。
 # 例如：
 
-
-[font]
-normal              = { family = "LXGWWenKaiMono Nerd Font", style = "Medium" } # 可以替换为你喜欢的字体和样式
-bold                = { style = "Bold" }                          # 可以添加family字段来指定不同的字体
-italic              = { style = "Italic" }                        # 可以添加family字段来指定不同的字体
-bold_italic         = { style = "Bold Italic" }                   # 可以添加family字段来指定不同的字体
-size                = 17
-offset              = { x = 0, y = 0 }                            # 可以调整x和y的值来改变字母间距和行间距
-glyph_offset        = { x = 0, y = 0 }                            # 可以调整x和y的值来改变字符在其单元格内的位置
-builtin_box_drawing = true                                        # 可以设置为false来使用系统字体绘制盒子字符和电源线符号
 
 [mouse]
 hide_when_typing = true # 可以设置为true，这样输入时光标会暂时隐藏
