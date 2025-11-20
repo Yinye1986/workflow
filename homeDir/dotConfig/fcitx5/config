@@ -72,4 +72,11 @@ AutoSavePeriod=30
 0=chttrans
 1=clipboard
 2=cloudpinyin
+3=fullwidth
+4=imselector
+5=pinyinhelper
+6=punctuation
+7=quickphrase
+8=spell
+9=table
 

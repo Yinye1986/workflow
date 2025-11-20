@@ -1,7 +1,7 @@
 {
   "image#menu": {
     "on-click": "exec fuzzel",
-    "on-click-right": "exec fuzzel-logout-menu",
+    "on-click-right": "exec fuzzel",
     "path": "/const/workflow/homeDir/dotLocal/asserts/arch-linux-svgrepo-com.svg",
     "size": 15
   },
@@ -20,19 +20,19 @@
     "warp-on-scroll": false,
     "format": "{icon}",
     "format-icons": {
-        "1": "壹",
-        "2": "贰",
-        "3": "叁",
-        "4": "肆",
-        "5": "伍",
-        "6": "陆",
-        "7": "柒",
-        "8": "捌",
-        "9": "玖",
-        "10":"拾",
-        "urgent": "!",
-        "focused": "!",
-        "default": "!"
+      "1": "壹",
+      "2": "贰",
+      "3": "叁",
+      "4": "肆",
+      "5": "伍",
+      "6": "陆",
+      "7": "柒",
+      "8": "捌",
+      "9": "玖",
+      "10":"拾",
+      "urgent": "!",
+      "focused": "!",
+      "default": "!"
     }
   },
   "sway/mode": {
@@ -46,11 +46,10 @@
     }
   },
   "network": {
+    "interval": 5,
     "format-disconnected": "",
     "format-ethernet": "E",
     "format-wifi": " ",
-    "interval": 5,
-    "on-click": "foot nmtui",
     "tooltip-format-disconnected": "Disconnected",
     "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes}",
     "tooltip-format-wifi": "{essid} {bandwidthDownBytes}"
@@ -58,16 +57,17 @@
   "wireplumber#sink": {
     "format": "{icon}",
     "format-icons": [
-      "",
+      " ",
       " ",
-      " "
+      " ",
     ],
-    "format-muted": "󰝟",
+    "format-muted": " ",
     "max-volume": 200,
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "scroll-step": 1,
-    "tooltip-format": "{volume}%"
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
   },
   "wireplumber#source": {
     "format": "",
@@ -146,14 +146,7 @@
   },
   "temperature": {
     "critical-threshold": 90,
-    "format": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format": "{temperatureC}°C",
     "interval": 5,
     "warning-threshold": 75
   },
@@ -179,5 +172,33 @@
     },
     "format": "{:%a, %b %d %Y - %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+  "group/sysinfo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/arrow-left",
+      "idle_inhibitor",
+      "cpu",
+      "memory",
+      "temperature",
+      "battery",
+      "network",
+      "wireplumber#sink",
+      "wireplumber#source",
+      "tray"
+    ]
+  },
+  "custom/arrow-left": {
+    "format": " ",
+    "tooltip": false
+  },
+  "image#arrow": {
+    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
+    "size": 15
   }
 }
