@@ -1,8 +1,8 @@
 @import "./color.css";
+@import "modules/css/taskbar.css";
 
 * {
     border: none;
-    /* 最小高度, 以确保它们在没有内容时仍然可见 */
     min-height: 0;
     font-family: "UbuntuMono Nerd Font";
     font-weight: 500;
@@ -54,7 +54,6 @@ window#waybar.empty #window {
 }
 
 
-#taskbar,
 #workspaces {
     background-color: @base00;
     border-radius: 4px;
@@ -89,7 +88,6 @@ window#waybar.empty #window {
     color: @base05;
 }
 
-#taskbar button,
 #image,
 #idle_inhibitor,
 #temperature,
@@ -107,16 +105,6 @@ window#waybar.empty #window {
 }
 
 
-#taskbar button {
-    padding-left: 1px;
-    padding-right: 1px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-#taskbar button.active {
-    background-color: @base02;
-}
 
 #temperature.critical,
 #cpu.critical,

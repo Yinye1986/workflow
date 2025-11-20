@@ -2,7 +2,7 @@
   "image#menu": {
     "on-click": "exec fuzzel",
     "on-click-right": "exec fuzzel",
-    "path": "/const/workflow/homeDir/dotLocal/asserts/arch-linux-svgrepo-com.svg",
+    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
     "size": 15
   },
   "wlr/taskbar": {
@@ -181,7 +181,6 @@
       "click-to-reveal": true
     },
     "modules": [
-      "custom/arrow-left",
       "idle_inhibitor",
       "cpu",
       "memory",

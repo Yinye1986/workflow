@@ -21,9 +21,9 @@
   ],
   "modules-right": [
     "custom/arrow-left",
+    "idle_inhibitor",
     "wireplumber#sink",
     "wireplumber#source",
-    "idle_inhibitor",
     "tray",
     "clock",
   ],
