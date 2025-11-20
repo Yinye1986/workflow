@@ -15,7 +15,7 @@ position = "None" # { x = 0, y = 0 } # wm管理
 padding = { x = 0, y = 0 } # 边距
 dynamic_padding = true     # 均匀填充
 decorations = "None"       # 边框样式
-opacity = 0.5              # 透明度
+opacity = 0.8              # 透明度
 blur = true                # 毛玻璃 # 仅 macOS/KDE Wayland
 startup_mode = "Windowed"  # 启动时窗口模式
 title = "Alacritty"        # 标题
