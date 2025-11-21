@@ -24,6 +24,7 @@
     "idle_inhibitor",
     "wireplumber#sink",
     "wireplumber#source",
+    "backlight",
     "tray",
     "clock",
   ],

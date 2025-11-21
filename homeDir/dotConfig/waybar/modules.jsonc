@@ -1,17 +1,27 @@
 {
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    }
+  },
   "image#menu": {
     "on-click": "exec fuzzel",
     "on-click-right": "exec fuzzel",
-    "path": "../asserts/arch-linux-svgrepo-com.svg",
-    "size": 15
+    "path": "/const/workflow/homeDir/dotConfig/waybar/asserts/arch-linux-svgrepo-com.svg",
+    "size": 5
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 15,
+    "icon-size": 5,
     "icon-theme": "Everforest-Dark",
     "on-click": "activate",
     "on-click-right": "close",
     "tooltip-format": "{title}"
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
   },
   "sway/workspaces": {
     "all-outputs": true,
@@ -35,15 +45,84 @@
       "default": "!"
     }
   },
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+  "wireplumber#sink": {
+    "format": "{volume}%",
+    "format-muted": "MMM",
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
+    "max-volume": 200,
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
   },
-  "idle_inhibitor": {
+  "wireplumber#source": {
+    "format": "{volume}%",
+    "format-muted": "MMM",
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
+    "max-volume": 200,
+    "scroll-step": 1,
+    "node-type": "Audio/Source",
+    "on-click": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+  },
+  "backlight": {
+    "device": "amdgpu_bl1",
     "format": "{icon}",
-    "format-icons": {
-      "activated": " ",
-      "deactivated": " "
-    }
+    "format-icons": [
+      "󰌶",
+      "󰌵",
+    ],
+    "on-scroll-down": "brightnessctl set 1%-",
+    "on-scroll-up": "brightnessctl set +1%",
+    "tooltip-format": "{percent}%"
+  },
+  "tray": {
+    "icon-size": 5,
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "calendar": {
+      "format": {
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+      },
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "on-scroll": 1,
+      "weeks-pos": "right"
+    },
+    "format": "{:%a, %b %d %Y - %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+  "group/sysinfo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/arrow-left",
+      "network",
+      "cpu",
+      "memory",
+      "temperature",
+      "battery",
+    ]
+  },
+  "custom/arrow-left": {
+    "format": " ",
+    "tooltip": false,
+  },
+  "image#arrow": {
+    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
+    "size": 5,
   },
   "network": {
     "interval": 5,
@@ -54,50 +133,29 @@
     "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes}",
     "tooltip-format-wifi": "{essid} {bandwidthDownBytes}"
   },
-  "wireplumber#sink": {
+  "cpu": {
     "format": "{icon}",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-    ],
-    "format-muted": " ",
-    "max-volume": 200,
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "scroll-step": 1,
-    "tooltip": true,
-    "tooltip-format": "{volume}%",
+    "format-icons": [" "],
+    "interval": 2,
+    "states": {
+      "warning": 70,
+      "critical": 90
+    },
+    "on-click": "alacritty --title 'btop' --option 'window.dimensions.columns=88' --option 'window.dimensions.lines=24' --command 'btop'"
   },
-  "wireplumber#source": {
-    "format": "",
-    "format-muted": "",
-    "max-volume": 200,
-    "node-type": "Audio/Source",
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "scroll-step": 1,
-    "tooltip-format": "{volume}%"
-  },
-  "backlight": {
-    "device": "amdgpu_bl1",
+  "memory": {
     "format": "{icon}",
-    "format-icons": [
-      "󰛩 ",
-      "󱩎 ",
-      "󱩏 ",
-      "󱩐 ",
-      "󱩑 ",
-      "󱩒 ",
-      "󱩓 ",
-      "󱩔 ",
-      "󱩕 ",
-      "󱩖 ",
-      "󰛨 "
-    ],
-    "on-scroll-down": "brightnessctl set 1%-",
-    "on-scroll-up": "brightnessctl set +1%",
-    "tooltip-format": "{percent}%"
+    "format-icons": [" "],
+    "interval": 2,
+    "states": {
+      "critical": 80
+    }
+  },
+  "temperature": {
+    "critical-threshold": 90,
+    "format": "{temperatureC}°C",
+    "interval": 5,
+    "warning-threshold": 75
   },
   "battery": {
     "events": {
@@ -124,77 +182,6 @@
       "critical": 15,
       "warning": 30
     },
-    "tooltip-format": "{capacity}% {timeTo}"
-  },
-  "cpu": {
-    "format": "{icon}",
-    "format-icons": [" "],
-    "interval": 2,
-    "states": {
-      "warning": 70,
-      "critical": 90
-    },
-    "on-click": "alacritty --title 'btop' --option 'window.dimensions.columns=88' --option 'window.dimensions.lines=24' --command 'btop'"
-  },
-  "memory": {
-    "format": "{icon}",
-    "format-icons": [" "],
-    "interval": 2,
-    "states": {
-      "critical": 80
-    }
-  },
-  "temperature": {
-    "critical-threshold": 90,
-    "format": "{temperatureC}°C",
-    "interval": 5,
-    "warning-threshold": 75
-  },
-  "tray": {
-    "icon-size": 13,
-    "spacing": 10,
-    "tooltip": false
-  },
-  "clock": {
-    "calendar": {
-      "format": {
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
-      },
-      "mode": "year",
-      "mode-mon-col": 3,
-      "on-click-right": "mode",
-      "on-scroll": 1,
-      "weeks-pos": "right"
-    },
-    "format": "{:%a, %b %d %Y - %H:%M}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
-  },
-  "custom/arrow-left": {
-    "format": " ",
-    "tooltip": false,
-  },
-  "image#arrow": {
-    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
-    "size": 15,
-  },
-  "group/sysinfo": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "transition-left-to-right": true,
-      "click-to-reveal": true
-    },
-    "modules": [
-      "custom/arrow-left",
-      "network",
-      "cpu",
-      "memory",
-      "temperature",
-      "battery",
-    ]
+    "tooltip-format": "{capacity}%\n{power}\n{timeTo}\n{cycles}次\n{health}"
   },
 }

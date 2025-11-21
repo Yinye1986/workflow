@@ -4,7 +4,7 @@
     border: none;
     font-family: "UbuntuMono Nerd Font";
     font-weight: 500;
-    font-size: 15px;
+    font-size: 5px;
     letter-spacing: -0.5px;
     margin: 1px;
 }
@@ -43,6 +43,7 @@ tooltip label {
 #custom-arrow-left,
 #idle_inhibitor,
 #wireplumber,
+#backlight,
 #tray,
 #clock {
     padding: 2px 6px;
@@ -56,9 +57,10 @@ tooltip label {
 #network,
 #cpu,
 #memory,
-#backlight,
 #battery,
 #temperature {
+    background-color: @base01;
+    color: @base05;
 
 }
 
