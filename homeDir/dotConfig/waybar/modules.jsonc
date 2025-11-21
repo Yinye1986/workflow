@@ -2,7 +2,7 @@
   "image#menu": {
     "on-click": "exec fuzzel",
     "on-click-right": "exec fuzzel",
-    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
+    "path": "../asserts/arch-linux-svgrepo-com.svg",
     "size": 15
   },
   "wlr/taskbar": {
@@ -173,6 +173,14 @@
     "format": "{:%a, %b %d %Y - %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
+  "custom/arrow-left": {
+    "format": " ",
+    "tooltip": false,
+  },
+  "image#arrow": {
+    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
+    "size": 15,
+  },
   "group/sysinfo": {
     "orientation": "inherit",
     "drawer": {
@@ -181,23 +189,12 @@
       "click-to-reveal": true
     },
     "modules": [
-      "idle_inhibitor",
+      "custom/arrow-left",
+      "network",
       "cpu",
       "memory",
       "temperature",
       "battery",
-      "network",
-      "wireplumber#sink",
-      "wireplumber#source",
-      "tray"
     ]
   },
-  "custom/arrow-left": {
-    "format": " ",
-    "tooltip": false
-  },
-  "image#arrow": {
-    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
-    "size": 15
-  }
 }
