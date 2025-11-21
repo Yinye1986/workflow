@@ -10,11 +10,11 @@
     "on-click": "exec fuzzel",
     "on-click-right": "exec fuzzel",
     "path": "/const/workflow/homeDir/dotConfig/waybar/asserts/arch-linux-svgrepo-com.svg",
-    "size": 5
+    "size": 15
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 5,
+    "icon-size": 15,
     "icon-theme": "Everforest-Dark",
     "on-click": "activate",
     "on-click-right": "close",
@@ -78,7 +78,7 @@
     "tooltip-format": "{percent}%"
   },
   "tray": {
-    "icon-size": 5,
+    "icon-size": 15,
     "spacing": 10,
     "tooltip": false
   },
@@ -120,14 +120,10 @@
     "format": " ",
     "tooltip": false,
   },
-  "image#arrow": {
-    "path": "/const/workflow/homeDir/dotLocal/asserts/arch.svg",
-    "size": 5,
-  },
   "network": {
     "interval": 5,
-    "format-disconnected": "",
-    "format-ethernet": "E",
+    "format-disconnected": " ",
+    "format-ethernet": " ",
     "format-wifi": " ",
     "tooltip-format-disconnected": "Disconnected",
     "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes}",
@@ -146,7 +142,7 @@
   "memory": {
     "format": "{icon}",
     "format-icons": [" "],
-    "interval": 2,
+    "interval": 5,
     "states": {
       "critical": 80
     }

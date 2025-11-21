@@ -1,10 +1,11 @@
 @import "./color.css";
+
 /* 全局CSS */
 * {
     border: none;
     font-family: "UbuntuMono Nerd Font";
     font-weight: 500;
-    font-size: 5px;
+    font-size: 15px;
     letter-spacing: -0.5px;
     margin: 1px;
 }
@@ -37,6 +38,15 @@ tooltip label {
     background-color: @base02;
 }
 
+/* Center */
+#workspaces {
+
+}
+#clock {
+    background-color: @base00;
+}
+
+/* right */
 /* 常用控制模块 */
 #image,
 #mode,
@@ -44,26 +54,23 @@ tooltip label {
 #idle_inhibitor,
 #wireplumber,
 #backlight,
-#tray,
-#clock {
+#tray {
     padding: 2px 6px;
     border-radius: 4px;
     background-color: @base01;
     color: @base05;
 }
-
 /* 折叠仪表模块 */
-#window,
 #network,
 #cpu,
 #memory,
 #battery,
 #temperature {
+    padding: 2px 6px;
+    border-radius: 4px;
     background-color: @base01;
     color: @base05;
-
 }
-
 /* 报警样式 */
 #battery.warning {
     color: @base0A;
