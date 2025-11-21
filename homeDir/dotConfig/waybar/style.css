@@ -43,6 +43,7 @@ tooltip label {
 
 }
 #clock {
+    color: @base05;
     background-color: @base00;
 }
 
