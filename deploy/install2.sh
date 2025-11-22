@@ -32,6 +32,8 @@ pacman -S --needed --noconfirm brightnessctl
 # systemctl enable greetd
 ## sway
 pacman -S --needed --noconfirm sway swaybg
+## 兼容层
+pacman -S --needed --noconfirm xorg-xwayland
 ## hyprland
 # pacman -S --needed --noconfirm hyprland hyprpaper hyprlock
 ## bar
