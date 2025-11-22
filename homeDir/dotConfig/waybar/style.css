@@ -21,6 +21,7 @@ tooltip label {
     margin: 2px;
 }
 
+/* left */
 /* taskbar */
 #taskbar{
     background-color: @base00;
@@ -37,6 +38,9 @@ tooltip label {
 #taskbar button.active {
     background-color: @base02;
 }
+#mode {
+
+}
 
 /* Center */
 #workspaces {
@@ -50,7 +54,6 @@ tooltip label {
 /* right */
 /* 常用控制模块 */
 #image,
-#mode,
 #custom-arrow-left,
 #idle_inhibitor,
 #wireplumber,
