@@ -8,6 +8,7 @@ systemctl enable sshd
 
 pacman -S --needed --noconfirm curl wget aria2
 pacman -S --needed --noconfirm zip unzip p7zip
+pacman -S --needed --noconfirm man-db tealdeer
 
 # 外设
 ## 音频

@@ -14,10 +14,9 @@
   "modules-left": [
     "image#menu",
     "wlr/taskbar",
-    "sway/mode",
   ],
   "modules-center": [
-    "clock",
+    "sway/mode",
   ],
   "modules-right": [
     "group/sysinfo",
@@ -26,6 +25,7 @@
     "wireplumber#source",
     "backlight",
     "tray",
+    "clock",
   ],
   "include": [
     "~/.config/waybar/modules.jsonc",
