@@ -20,7 +20,7 @@ blur = true                # 毛玻璃 # 仅 macOS/KDE Wayland
 startup_mode = "Windowed"  # 启动时窗口模式
 title = "Alacritty"        # 标题
 dynamic_title = true
-# class = { instance = "<string>", general = "this is a term" } # 仅 LINUX/BSD
+# class = { instance = "<string>", general = "this is a term" } # 仅 LINUX/BSD, On Wayland, general is used as app_id and instance is ignored.
 decorations_theme_variant = "None"
 # resize_increments = true   # 仅 macOS/X11
 # option_as_alt = "None"     # 仅 macOS
@@ -40,20 +40,15 @@ offset              = { x = 0, y = 0 } # 字间距 行间距
 glyph_offset        = { x = 0, y = 0 } # 在单元格内的位置
 builtin_box_drawing = true             # 可以设置为false来使用系统字体绘制盒子字符和电源线符号
 
-[terminal.shell]
-program = "/bin/fish"
-args    = [ "-l"]
-
-# ipc_socket字段表示是否提供IPC使用alacritty msg（仅unix）
-# 默认值：true
+[bell]
+animation = "EaseOutCirc" # 可以替换为你喜欢的动画效果
+duration  = 1000 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
+color     = "#f1f254" # 可以替换为你喜欢的颜色
+command   = { program = "notify-send", args = [ "bell", ] } # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
 
 [selection]
-# semantic_escape_chars = ",│`|:\"' ()[]{}<>\t" # 语义分割符；可以替换为你喜欢的字符
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true # 可以设置为true，这样选中的文本就会被复制到主剪贴板
-
-
-[terminal]
-osc52 = "OnlyCopy" # osc52字段控制是否允许使用OSC 52转义序列写入系统剪贴板。虽然这个转义序列在从远程服务器复制内容时很有用，但是允许任何应用程序从剪贴板读取可能会被轻易滥用，而且相比于显式粘贴文本，它并没有提供显著的好处。
 
 [cursor]
 style = { shape = "block", blinking = "Never" }
@@ -63,15 +58,11 @@ blink_timeout    = 5      # 5s 后停止闪烁
 unfocused_hollow = true   # 可以设置为false，这样当窗口失去焦点时，光标将不会被渲染为空心框
 thickness        = 0.1    # 失焦空心框厚度
 
-#[bell]
-#animation = "Linear" # 可以替换为你喜欢的动画效果
-#duration  = 15 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
-#color     = "#ffffff" # 可以替换为你喜欢的颜色
-#command   = "None" # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
+[terminal]
+shell = { program = "/bin/fish", args = [ "-l", ] }
+osc52 = "OnlyCopy" # osc52字段控制是否允许使用OSC 52转义序列写入系统剪贴板。虽然这个转义序列在从远程服务器复制内容时很有用，但是允许任何应用程序从剪贴板读取可能会被轻易滥用，而且相比于显式粘贴文本，它并没有提供显著的好处。
 
-# ENV部分中的所有键值对将作为环境变量添加到Alacritty启动的任何进程中，包括其shell。
-# 一些条目可能会覆盖由alacritty自身设置的变量。
-# 例如：
+
 
 
 [mouse]
