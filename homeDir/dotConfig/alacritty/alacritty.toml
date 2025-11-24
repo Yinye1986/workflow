@@ -40,11 +40,11 @@ offset              = { x = 0, y = 0 } # 字间距 行间距
 glyph_offset        = { x = 0, y = 0 } # 在单元格内的位置
 builtin_box_drawing = true             # 可以设置为false来使用系统字体绘制盒子字符和电源线符号
 
-[bell]
-animation = "EaseOutCirc" # 可以替换为你喜欢的动画效果
-duration  = 1000 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
-color     = "#f1f254" # 可以替换为你喜欢的颜色
-command   = { program = "notify-send", args = [ "bell", ] } # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
+# [bell]
+# animation = "EaseOutCirc" # 可以替换为你喜欢的动画效果
+# duration  = 1000 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
+# color     = "#f1f254" # 可以替换为你喜欢的颜色
+# command   = { program = "notify-send", args = [ "bell", ] } # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
