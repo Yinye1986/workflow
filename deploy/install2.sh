@@ -12,10 +12,8 @@ pacman -S --needed --noconfirm man-db tealdeer
 
 # 外设
 ## 音频
-pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol
-# systemctl --user enable --now pipewire
-# systemctl --user enable --now wireplumber
-# systemctl --user enable --now pipewire-pulse
+pacman -S --needed --noconfirm pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol rtkit
+systemctl enable rtkit-daemon.service
 ## 网络
 pacman -S --needed --noconfirm networkmanager network-manager-applet
 ## 蓝牙
