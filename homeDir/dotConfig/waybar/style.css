@@ -1,6 +1,6 @@
 @import "./color.css";
+@import "./css/hyprwindow.css";
 
-/* 全局CSS */
 * {
     border: none;
     font-family: "UbuntuMono Nerd Font";
@@ -9,9 +9,11 @@
     letter-spacing: -0.5px;
     margin: 1px;
 }
+
 #waybar {
     background: @base00;
 }
+
 tooltip {
     background-color: @base00;
     font-size: 2px;
@@ -38,43 +40,38 @@ tooltip label {
 #taskbar button.active {
     background-color: @base02;
 }
+
 #mode {
 
 }
 
-/* Center */
-#workspaces {
 
-}
+
+/* left */
+
+/* Center */
 #clock {
     color: @base05;
     background-color: @base00;
 }
 
 /* right */
-/* 常用控制模块 */
-#image,
-#custom-arrow-left,
+#network,
+#cpu,
+#memory,
+#battery,
+#temperature,
 #idle_inhibitor,
 #wireplumber,
 #backlight,
 #tray {
     padding: 2px 6px;
     border-radius: 4px;
-    background-color: @base01;
     color: @base05;
-}
-/* 折叠仪表模块 */
-#network,
-#cpu,
-#memory,
-#battery,
-#temperature {
-    padding: 2px 6px;
-    border-radius: 4px;
     background-color: @base01;
-    color: @base05;
 }
+
+
 /* 报警样式 */
 #battery.warning {
     color: @base0A;

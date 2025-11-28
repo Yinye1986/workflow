@@ -6,45 +6,6 @@
       "deactivated": " "
     }
   },
-  "image#menu": {
-    "on-click": "exec fuzzel",
-    "on-click-right": "exec fuzzel",
-    "path": "/const/workflow/homeDir/dotConfig/waybar/asserts/arch-linux-svgrepo-com.svg",
-    "size": 15
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 15,
-    "icon-theme": "Everforest-Dark",
-    "on-click": "activate",
-    "on-click-right": "close",
-    "tooltip-format": "{title}"
-  },
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
-  "sway/workspaces": {
-    "all-outputs": true,
-    "disable-scroll": false,
-    "disable-click": false,
-    "warp-on-scroll": false,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "壹",
-      "2": "贰",
-      "3": "叁",
-      "4": "肆",
-      "5": "伍",
-      "6": "陆",
-      "7": "柒",
-      "8": "捌",
-      "9": "玖",
-      "10":"拾",
-      "urgent": "!",
-      "focused": "!",
-      "default": "!"
-    }
-  },
   "wireplumber#sink": {
     "format": "{volume}%",
     "format-muted": "MMM",
@@ -67,12 +28,7 @@
     "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
   },
   "backlight": {
-    "device": "amdgpu_bl1",
-    "format": "{icon}",
-    "format-icons": [
-      "󰌶",
-      "󰌵",
-    ],
+    "format": "{percent}%",
     "on-scroll-down": "brightnessctl set 1%-",
     "on-scroll-up": "brightnessctl set +1%",
     "tooltip-format": "{percent}%"
@@ -80,7 +36,6 @@
   "tray": {
     "icon-size": 15,
     "spacing": 10,
-    "tooltip": false
   },
   "clock": {
     "calendar": {
@@ -100,34 +55,14 @@
     "format": "{:%a, %b %d - %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
-  "group/sysinfo": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "transition-left-to-right": true,
-      "click-to-reveal": true
-    },
-    "modules": [
-      "custom/arrow-left",
-      "network",
-      "cpu",
-      "memory",
-      "temperature",
-      "battery",
-    ]
-  },
-  "custom/arrow-left": {
-    "format": " ",
-    "tooltip": false,
-  },
-  "network": {
+    "network": {
     "interval": 5,
-    "format-disconnected": " ",
-    "format-ethernet": " ",
-    "format-wifi": " ",
-    "tooltip-format-disconnected": "Disconnected",
-    "tooltip-format-ethernet": "{ifname} {bandwidthDownBytes}",
-    "tooltip-format-wifi": "{essid} {bandwidthDownBytes}"
+    "format-disconnected": "离线",
+    "format-ethernet": "{ifname}:{ipaddr}/{cidr}",
+    "format-wifi": "{ifname}:{ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "未连接到网络",
+    "tooltip-format-ethernet": "Inf:{ifname}\nAdr:{ipaddr}/{cidr}\nGTW:{gwaddr}\n",
+    "tooltip-format-wifi": "Inf:{ifname}\nWfi:{essid}Adr:{ipaddr}/{cidr}\nGTW:{gwawddr}\nFrq:{frequency}"
   },
   "cpu": {
     "format": "{icon}",
@@ -140,8 +75,7 @@
     "on-click": "alacritty --title 'btop' --option 'window.dimensions.columns=88' --option 'window.dimensions.lines=24' --command 'btop'"
   },
   "memory": {
-    "format": "{icon}",
-    "format-icons": [" "],
+    "format": "{percentage}%",
     "interval": 5,
     "states": {
       "critical": 80

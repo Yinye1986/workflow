@@ -68,6 +68,6 @@ pacman -S --needed --noconfirm fcitx5-im fcitx5-chinese-addons
 ## 浏览器
 pacman -S --needed --noconfirm firefox
 ## 字体管理器及字体
-pacman -S --needed --noconfirm font-manager ttf-0xproto-nerd
+pacman -S --needed --noconfirm font-manager ttf-ubuntu-mono-nerd
 
 # yay -S ttf-lxgw-wenkai-mono-nerd

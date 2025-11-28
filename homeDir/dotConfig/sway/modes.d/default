@@ -2,7 +2,6 @@
 $bindsym $mod+Shift+Return exec $term
 $bindsym $mod+d exec $menu
 $bindsym $mod+Shift+v exec $cliphist
-$bindsym Control+Shift+Delete exec $btop
 $bindsym $mod+Shift+q kill
 
 $bindsym $mod+f fullscreen

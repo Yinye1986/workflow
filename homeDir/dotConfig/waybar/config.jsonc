@@ -1,22 +1,11 @@
 {
   "layer": "top",
   "position": "top",
-  // waybar外边距
-  "margin-top": 0,
-  "margin-bottom": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  // waybar大小
-  // "height": 0,
-  // "width": 0,
-  // 模块间距
-  "spacing": 0,
   "modules-left": [
-    "image#menu",
     "wlr/taskbar",
   ],
   "modules-center": [
-    "sway/mode",
+    "clock",
   ],
   "modules-right": [
     "group/sysinfo",
@@ -25,12 +14,21 @@
     "wireplumber#source",
     "backlight",
     "tray",
-    "clock",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
   ],
   "include": [
-    "~/.config/waybar/modules.jsonc",
+    "./modules/left.jsonc",
+    "./modules/center.jsonc",
+    "./modules/rightGroupInfo.jsonc",
+    "./modules/right.jsonc",
   ],
 }
 
-
+    // "sway/mode",
+    // "hyprland/workspaces",
     // "sway/workspaces",
+    // "hyprland/window",

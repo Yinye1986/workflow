@@ -1,0 +1,27 @@
+{
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "sway/workspaces": {
+    "all-outputs": true,
+    "disable-scroll": false,
+    "disable-click": false,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "壹",
+      "2": "贰",
+      "3": "叁",
+      "4": "肆",
+      "5": "伍",
+      "6": "陆",
+      "7": "柒",
+      "8": "捌",
+      "9": "玖",
+      "10":"拾",
+      "urgent": "!",
+      "focused": "!",
+      "default": "!"
+    }
+  },
+}
