@@ -11,3 +11,5 @@ apt upgrade
 
 apt install git ssh
 apt install yazi helix
+
+ln -sf /sdcard ~/sdcard
