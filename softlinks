@@ -4,12 +4,10 @@ rm -rf $HOME/.bash_profile
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.npmrc
-# rm -rf $HOME/.zshrc
 ln -sf /const/workflow/homeDir/.bash_profile $HOME/.bash_profile
 ln -sf /const/workflow/homeDir/.bashrc $HOME/.bashrc
 ln -sf /const/workflow/homeDir/.gitconfig $HOME/.gitconfig
 ln -sf /const/workflow/homeDir/.npmrc $HOME/.npmrc
-# ln -sf /const/workflow/homeDir/.zshrc $HOME/.zshrc
 
 rm -rf $HOME/.config/alacritty
 rm -rf $HOME/.config/environment.d
