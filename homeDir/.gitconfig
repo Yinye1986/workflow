@@ -2,6 +2,6 @@
 	name = CZ
 	email = yinye1986@gmail.com
 [core]
-	editor = nvim
+	editor = hx
 [init]
 	defaultBranch = main
