@@ -1,0 +1,122 @@
+[general]
+import = [
+    '~/.config/alacritty/themes/gruvbox_dark.toml',
+]
+working_directory = 'None' # 继承父进程工作目录
+live_config_reload = true  # 实时reload配置
+ipc_socket = true          # 启用 IPC, 允许通过 alacritty msg 命令与 Alacritty 进行交互, 仅UNIX
+
+[env]
+AAA_TIPS='可以用alacritty配置env'
+
+[window]
+dimensions = { columns = 120, lines = 80 }
+position = "None" # { x = 0, y = 0 } # wm管理
+padding = { x = 0, y = 0 } # 边距
+dynamic_padding = true     # 均匀填充
+decorations = "None"       # 边框样式
+opacity = 0.8              # 透明度
+blur = true                # 毛玻璃 # 仅 macOS/KDE Wayland
+startup_mode = "Windowed"  # 启动时窗口模式
+title = "Alacritty"        # 标题
+dynamic_title = true
+# class = { instance = "<string>", general = "this is a term" } # 仅 LINUX/BSD, On Wayland, general is used as app_id and instance is ignored.
+decorations_theme_variant = "None"
+# resize_increments = true   # 仅 macOS/X11
+# option_as_alt = "None"     # 仅 macOS
+level = "Normal"
+
+[scrolling]
+history    = 10000 # 滚动回溯缓冲区
+multiplier = 6     # 滚动行数
+
+[font]
+normal              = { family = "UbuntuMono Nerd Font", style = "Regular" }
+bold                = { style = "Bold" }
+italic              = { style = "Italic" }
+bold_italic         = { style = "Bold Italic" }
+size                = 17
+offset              = { x = 0, y = 0 } # 字间距 行间距
+glyph_offset        = { x = 0, y = 0 } # 在单元格内的位置
+builtin_box_drawing = true             # 可以设置为false来使用系统字体绘制盒子字符和电源线符号
+
+# [bell]
+# animation = "EaseOutCirc" # 可以替换为你喜欢的动画效果
+# duration  = 1000 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
+# color     = "#f1f254" # 可以替换为你喜欢的颜色
+# command   = { program = "notify-send", args = [ "bell", ] } # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true # 可以设置为true，这样选中的文本就会被复制到主剪贴板
+
+[cursor]
+style = { shape = "block", blinking = "Never" }
+vi_mode_style    = "None" # 使用 normal 配置, 也可像前者单独配置
+blink_interval = 750
+blink_timeout    = 5      # 5s 后停止闪烁
+unfocused_hollow = true   # 可以设置为false，这样当窗口失去焦点时，光标将不会被渲染为空心框
+thickness        = 0.1    # 失焦空心框厚度
+
+[terminal]
+shell = { program = "/bin/fish", args = [ "-l", ] }
+osc52 = "OnlyCopy" # osc52字段控制是否允许使用OSC 52转义序列写入系统剪贴板。虽然这个转义序列在从远程服务器复制内容时很有用，但是允许任何应用程序从剪贴板读取可能会被轻易滥用，而且相比于显式粘贴文本，它并没有提供显著的好处。
+
+
+
+
+[mouse]
+hide_when_typing = true # 可以设置为true，这样输入时光标会暂时隐藏
+bindings         = [
+    { mouse = "Right", action = "ExpandSelection" },
+#    { mouse = "Forward", mods = "Control", action = "" },
+#    { mouse = "Back", mods = "Control", action = "" }
+]
+
+# HINTS部分记录了配置文件的[hints]表。
+
+# Terminal hints可以用来在终端的可见部分找到文本或超链接，并将其传输给其他应用程序。
+
+# alphabet字段表示用于提示标签的键。
+# 默认值："jfkdls;ahgurieowpq"
+# alphabet = "<string>"
+
+# enabled字段是一个数组，包含所有可用的提示。
+# 每个提示必须至少有一个regex或hyperlinks，以及一个action或command。
+# enabled = [{ regex = "<regex>", hyperlinks = "<hyperlinks>", post_processing = "<post_processing>", persist = "<persist>", action = "<action>", command = "<command>", binding = "<binding>", mouse = "<mouse>" },]
+
+# regex字段表示每行将与之比较的正则表达式。
+
+# hyperlinks字段表示当为true时，所有OSC 8转义序列超链接将包含在提示中。
+
+# post_processing字段表示当为true时，如果有字符可能不是提示的一部分（例如，尾随的.），将使用启发式方法缩短匹配。这对URI最有用，仅适用于正则表达式匹配。
+
+# persist字段表示当为true时，提示在选择后保持持久。
+
+# action字段表示动作。可以是"Copy"，"Paste"，"Select"，"MoveViModeCursor"中的一个。
+
+# command字段表示当提示被点击或通过绑定选择时将执行的命令。提示的文本总是作为最后一个参数附加。
+
+# binding字段表示用于启动键盘提示选择过程的键绑定。
+
+# mouse字段表示鼠标设置。enabled字段控制是否在按下所有mods并悬停在提示文本上时下划线提示。
+
+[keyboard]
+bindings = [
+    { key = "Enter", mods = "Control", action = "ToggleViMode" },
+
+    { key = "U", mode = "Vi|~Search", action = "Up" },
+    { key = "E", mode = "Vi|~Search", action = "Down" },
+    { key = "N", mode = "Vi|~Search", action = "Left" },
+    { key = "I", mode = "Vi|~Search", action = "Right" },
+    { key = "N", mode = "Vi|~Search", mods = "Control", action = "SemanticLeft" },
+    { key = "I", mode = "Vi|~Search", mods = "Control", action = "SemanticRight" },
+
+    { key = "Y", mode = "Vi|~Search", action = "Copy" },
+    { key = "P", mods = "Control", action = "Paste" },
+    { key = "L", mode = "Vi|~Search", action = "SearchNext" },
+    { key = "L", mode = "Vi|~Search", mods = "Shift", action = "SearchPrevious" },
+
+    { key = "=", mods = "Control", action = "IncreaseFontSize" },
+    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+]

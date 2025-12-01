@@ -1,0 +1,4 @@
+set $term alacritty
+set $menu fuzzel
+set $cliphist cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy
+set $btop alacritty --title 'btop' --option 'window.dimensions.columns=88' --option 'window.dimensions.lines=24' --command 'btop'

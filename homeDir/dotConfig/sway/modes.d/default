@@ -1,0 +1,80 @@
+# 常用
+$bindsym $mod+Shift+Return exec $term
+$bindsym $mod+d exec $menu
+$bindsym $mod+Shift+v exec $cliphist
+$bindsym $mod+Shift+q kill
+
+$bindsym $mod+f fullscreen
+$bindsym $mod+Shift+m floating toggle
+$bindsym $mod+m layout toggle split
+
+$bindsym $mod+Shift+grave move scratchpad, exec "waybar-signal scratchpad"
+$bindsym $mod+grave scratchpad show, exec "waybar-signal scratchpad"
+
+# 布局
+#========================================
+# $bindsym $mod+Shift+s layout stacking
+# $bindsym $mod+Shift+t layout tabbed
+# $bindsym $mod+Shift+h splith
+# $bindsym $mod+Shift+v splitv
+
+# 聚焦
+#======================================
+# $bindsym $mod+ focus mode_toggle
+# $bindsym $mod+ focus parent
+
+# 移动
+#===================================
+floating_modifier $mod normal
+$bindsym $mod+$up focus up
+$bindsym $mod+$down focus down
+$bindsym $mod+$left focus left
+$bindsym $mod+$right focus right
+$bindsym $mod+Up focus up
+$bindsym $mod+Down focus down
+$bindsym $mod+Left focus left
+$bindsym $mod+Right focus right
+$bindsym $mod+Shift+$up move up
+$bindsym $mod+Shift+$down move down
+$bindsym $mod+Shift+$left move left
+$bindsym $mod+Shift+$right move right
+$bindsym $mod+Shift+Up move up
+$bindsym $mod+Shift+Down move down
+$bindsym $mod+Shift+Left move left
+$bindsym $mod+Shift+Right move right
+$bindsym $mod+1 workspace number 1
+$bindsym $mod+2 workspace number 2
+$bindsym $mod+3 workspace number 3
+$bindsym $mod+4 workspace number 4
+$bindsym $mod+5 workspace number 5
+$bindsym $mod+6 workspace number 6
+$bindsym $mod+7 workspace number 7
+$bindsym $mod+8 workspace number 8
+$bindsym $mod+9 workspace number 9
+$bindsym $mod+0 workspace number 10
+$bindsym $mod+Shift+1 move container to workspace number 1
+$bindsym $mod+Shift+2 move container to workspace number 2
+$bindsym $mod+Shift+3 move container to workspace number 3
+$bindsym $mod+Shift+4 move container to workspace number 4
+$bindsym $mod+Shift+5 move container to workspace number 5
+$bindsym $mod+Shift+6 move container to workspace number 6
+$bindsym $mod+Shift+7 move container to workspace number 7
+$bindsym $mod+Shift+8 move container to workspace number 8
+$bindsym $mod+Shift+9 move container to workspace number 9
+$bindsym $mod+Shift+0 move container to workspace number 10
+
+# 功能键
+#=====================================================================================
+$bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+$bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+$bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+$bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+$bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+$bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+# F1-F12
+#======================================================
+$bindsym $mod+F1 exec pcmanfm-qt
+$bindsym $mod+F3 exec firefox
+$bindsym $mod+F5 reload
+$bindsym $mod+F6 exec killall -SIGUSR2 waybar
