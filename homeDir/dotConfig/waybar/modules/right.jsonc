@@ -93,20 +93,7 @@
       "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
       "on-discharging-warning": "notify-send -u normal 'Low Battery'"
     },
-    "format": "{icon}",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format": "{capacity}%",
     "interval": 5,
     "states": {
       "critical": 15,

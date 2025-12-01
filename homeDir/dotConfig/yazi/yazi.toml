@@ -49,9 +49,18 @@ play = [
 	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+pyexec = [
+	{ run = 'python "$0"', block = true}
+]
+shexec = [
+	{ run = '/const/workflow/homeDir/dotLocal/scripts/yazi/x-shellscript_warpper.sh "$0"', block = true}
+]
 
 [open]
 rules = [
+  { name = "*.py", use = [ "edit", "pyexec" ] },
+  { name = "*.sh", use = [ "edit", "shexec" ] },
+	# { mime = "text/x-shellscript", use = [ "edit", "shexec" ]},
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
