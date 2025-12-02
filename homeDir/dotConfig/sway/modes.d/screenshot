@@ -4,12 +4,11 @@ set $pick_edit grim -g "$(slurp)" - | swappy -f -
 set $pick_upload grim -g "$(slurp)" - | curl -F "file=@-;filename=.png" https://x0.at/ | tee >(wl-copy) >(xargs notify-send)
 
 set $mode_screenshot "\
-<span foreground='$color10'>󰄄</span> \
-<span foreground='$color10'><b>P</b></span>ick \
-<span foreground='$color10'><b>S</b></span>ave \
-<span foreground='$color10'><b>C</b></span>edit \
-<span foreground='$color10'><b>U</b></span>pload"
-
+<span foreground='$color1'>󰄄</span> \
+<span foreground='$color1'><b>P</b></span><span foreground='$color2'>ick </span>\
+<span foreground='$color1'><b>S</b></span><span foreground='$color2'>ave </span>\
+<span foreground='$color1'><b>C</b></span><span foreground='$color2'>edit </span>\
+<span foreground='$color1'><b>U</b></span><span foreground='$color2'>pload</span>"
 mode --pango_markup $mode_screenshot {
     $bindsym p mode "default", exec $pick_yank
     $bindsym s mode "default", exec $pick_save

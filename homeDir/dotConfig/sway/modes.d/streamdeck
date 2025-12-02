@@ -7,9 +7,9 @@ set $video_pause adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE
 set $wakeup adb shell input keyevent KEYCODE_WAKEUP
 
 set $mode_streamdeck "\
-<span foreground='$color10'><b>󰕾 Shift:</b></span> \
-<span foreground='$color10'><b>󰃠  Ctrl:</b></span> \
-<span foreground='$color10'><b>󰐎 Space:</b></span>󱁐 "
+<span foreground='$color1'><b>󰕾 Shift:</b></span> \
+<span foreground='$color1'><b>󰃠  Ctrl:</b></span> \
+<span foreground='$color1'><b>󰐎 Space:</b></span>󱁐 "
 
 
 mode --pango_markup $mode_streamdeck {

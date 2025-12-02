@@ -1,5 +1,4 @@
 @import "./color.css";
-@import "./css/hyprwindow.css";
 
 * {
     border: none;
@@ -41,13 +40,11 @@ tooltip label {
     background-color: @base02;
 }
 
+
 #mode {
 
 }
 
-
-
-/* left */
 
 /* Center */
 #clock {

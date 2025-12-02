@@ -38,8 +38,8 @@ alias pada='/const/workflow/homeDir/dotLocal/scripts/scrcpy/pada.sh'
 alias padv='/const/workflow/homeDir/dotLocal/scripts/scrcpy/padv.sh'
 alias padc='/const/workflow/homeDir/dotLocal/scripts/scrcpy/padc.sh'
 alias padx='pkill scrcpy & adb kill-server'
-alias bak='/const/workflow/homeDir/dotLocal/scripts/bak.sh'
-alias updateGithubHosts='/const/workflow/homeDir/dotLocal/scripts/updateGithubhost.sh'
+alias bak='/const/workflow/homeDir/dotLocal/scripts/git/bak.sh'
+alias updateGithubHosts='/const/workflow/homeDir/dotLocal/scripts/git/updateGithubhost.sh'
 # alias wxit="bash /const/workflow/homeDir/dotScript/wxit.sh"
 
 # 多媒体托管服务

@@ -17,7 +17,6 @@ include ./config.d/inputs.conf
 include ./modes.d/default
 include ./modes.d/resize
 include ./modes.d/screenshot
-include ./modes.d/recording
 include ./modes.d/streamdeck
 include ./modes.d/shutdown
 

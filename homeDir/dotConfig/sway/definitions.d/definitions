@@ -8,3 +8,8 @@ set $right i
 
 set $bindsym bindsym --to-code
 set $unbindsym unbindsym --to-code
+
+# colors
+
+set $color1 #DEC86F
+set $color2 #d3c6aa
