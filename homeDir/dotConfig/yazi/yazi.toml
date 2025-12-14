@@ -3,18 +3,18 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
-ratio          = [ 1, 4, 3 ] # 各区比例八分之
-sort_by        = "alphabetical" # 排序方式
-sort_sensitive = true # 区分大小写
-sort_reverse   = false # 逆序排列
-sort_dir_first = true # 目录在前文件在后
-sort_translit  = false # 异形字母移译排序
+ratio          = [ 1, 4, 3 ]
+sort_by        = "alphabetical"
+sort_sensitive = true
+sort_reverse 	 = false
+sort_dir_first = true
+sort_translit  = false
 linemode       = "mtime"
 show_hidden    = false
-show_symlink   = true # 显示软链接指向
+show_symlink   = true
 scrolloff      = 5
-mouse_events   = [ "click", "scroll" ] # 响应的鼠标事件
-title_format   = "{cwd}" # 标题文本
+mouse_events   = [ "click", "scroll" ]
+title_format   = "Yazi: {cwd}"
 
 [preview]
 wrap            = "no"
@@ -22,32 +22,39 @@ tab_size        = 4
 max_width       = 600
 max_height      = 900
 cache_dir       = ""
-image_delay     = 100 # 预览开始时间(ms)
+image_delay     = 100
 image_filter    = "triangle"
 image_quality   = 75
-sixel_fraction  = 15
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = 'helix "$0"', block = true, for = "linux" },
+	{ run = '${EDITOR:-helix} "$0"', desc = "$EDITOR", block = true, for = "linux" },
+	{ run = 'code %0',    orphan = true, desc = "code",           for = "windows" },
+	{ run = 'code -w %0', block = true,  desc = "code (block)",   for = "windows" },
 ]
 open = [
-	{ run = 'xdg-open "$1"', for = "linux" },
+	{ run = 'xdg-open "$0"',                desc = "Open", for = "linux" },
+	{ run = 'open "$0"',                    desc = "Open", for = "macos" },
+	{ run = 'start "" "%0"', orphan = true, desc = "Open", for = "windows" },
+	{ run = 'termux-open "$0"',             desc = "Open", for = "android" },
 ]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
-	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
+	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+	{ run = 'termux-open "$(dirname "$1")"',        desc = "Reveal", for = "android" },
+	{ run = '''clear; exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
 	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
-	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+	{ run = 'mpv --force-window "$0"', orphan = true, for = "unix" },
+	{ run = 'mpv --force-window %0', orphan = true, for = "windows" },
+	{ run = '''mediainfo "$0"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 pyexec = [
 	{ run = 'python "$0"', block = true}
@@ -58,9 +65,6 @@ shexec = [
 
 [open]
 rules = [
-  { name = "*.py", use = [ "edit", "pyexec" ] },
-  { name = "*.sh", use = [ "edit", "shexec" ] },
-	# { mime = "text/x-shellscript", use = [ "edit", "shexec" ]},
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
@@ -78,6 +82,9 @@ rules = [
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
+	# USER
+  { name = "*.py", use = [ "edit", "pyexec" ] },
+  { name = "*.sh", use = [ "edit", "shexec" ] },
 ]
 
 [tasks]
@@ -85,11 +92,10 @@ micro_workers    = 10
 macro_workers    = 10
 bizarre_retry    = 3
 image_alloc      = 536870912  # 512MB
-image_bound      = [ 0, 0 ]
+image_bound      = [ 5000, 5000 ]
 suppress_preload = false
 
 [plugin]
-
 fetchers = [
 	# Mimetype
 	{ id = "mime", name = "*", run = "mime", prio = "high" },
@@ -100,7 +106,8 @@ spotters = [
 	{ mime = "text/*", run = "code" },
 	{ mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
 	# Image
-	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/{avif,hei?,jxl}", run = "magick" },
+	{ mime = "image/svg+xml", run = "svg" },
 	{ mime = "image/*", run = "image" },
 	# Video
 	{ mime = "video/*", run = "video" },
@@ -109,7 +116,8 @@ spotters = [
 ]
 preloaders = [
 	# Image
-	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/{avif,hei?,jxl}", run = "magick" },
+	{ mime = "image/svg+xml", run = "svg" },
 	{ mime = "image/*", run = "image" },
 	# Video
 	{ mime = "video/*", run = "video" },
@@ -120,14 +128,15 @@ preloaders = [
 	{ mime = "application/ms-opentype", run = "font" },
 ]
 previewers = [
-	{ name = "*/", run = "folder", sync = true },
+	{ name = "*/", run = "folder" },
 	# Code
 	{ mime = "text/*", run = "code" },
 	{ mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
 	# JSON
 	{ mime = "application/{json,ndjson}", run = "json" },
 	# Image
-	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/{avif,hei?,jxl}", run = "magick" },
+	{ mime = "image/svg+xml", run = "svg" },
 	{ mime = "image/*", run = "image" },
 	# Video
 	{ mime = "video/*", run = "video" },
