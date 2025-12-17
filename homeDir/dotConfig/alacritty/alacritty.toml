@@ -1,6 +1,6 @@
 [general]
 import = [
-    '~/.config/alacritty/themes/gruvbox_dark.toml',
+    './themes/gruvbox_dark.toml',
 ]
 working_directory = 'None' # 继承父进程工作目录
 live_config_reload = true  # 实时reload配置

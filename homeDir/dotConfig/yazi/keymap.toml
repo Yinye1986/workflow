@@ -7,7 +7,7 @@
 keymap = [
 	# 模式
 	{ on = [ "<Esc>" ], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
-	{ on = [ "<C-o>" ], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
+	{ on = [ "<C-'>" ], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "v" ],       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
   # 退出挂起
 	{ on = [ "q" ],     run = "quit",               desc = "退出并切换到当前目录" },
@@ -16,18 +16,18 @@ keymap = [
 
 
 	# 导航
-	{ on = [ "u" ],        run = "arrow -1" },
-	{ on = [ "e" ],        run = "arrow 1" },
 	{ on = [ "n" ],        run = "leave" },
-	{ on = [ "i" ],        run = "enter" },
-	{ on = [ "<Up>" ],     run = "arrow -1" },
-	{ on = [ "<Down>" ],   run = "arrow 1" },
+	{ on = [ "e" ],        run = "arrow 1" },
+	{ on = [ "i" ],        run = "arrow -1" },
+	{ on = [ "o" ],        run = "enter" },
 	{ on = [ "<Left>" ],   run = "leave" },
+	{ on = [ "<Down>" ],   run = "arrow 1" },
+	{ on = [ "<Up>" ],     run = "arrow -1" },
 	{ on = [ "<Right>" ],  run = "enter" },
-	{ on = [ "<C-u>" ],    run = "arrow -6" },
 	{ on = [ "<C-e>" ],    run = "arrow 6" },
-	{ on = [ "<C-Up>" ],   run = "arrow -6" },
+	{ on = [ "<C-i>" ],    run = "arrow -6" },
 	{ on = [ "<C-Down>" ], run = "arrow 6" },
+	{ on = [ "<C-Up>" ],   run = "arrow -6" },
 	# goto
 	{ on = [ "G" ],      run = "arrow bot",  desc = "Move cursor to the bottom" },
 	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
@@ -60,8 +60,8 @@ keymap = [
 	{ on = [ "<Enter>" ], run = "open",                        desc = "打开" },
 	{ on = [ "-" ],       run = "link",                        desc = "Symlink the absolute path of files" },
 	{ on = [ "_" ],       run = "link --relative",             desc = "Symlink the relative path of files" },
-	{ on = [ "d" ],       run = "remove",                      desc = "放入回收站" },
-	{ on = [ "D" ],       run = "remove --permanently",        desc = "永久删除" },
+	{ on = [ "D" ],       run = "remove",                      desc = "放入回收站" },
+	{ on = [ "<Delete>" ],       run = "remove --permanently",        desc = "永久删除" },
 	{ on = [ "m", "k" ],  run = "create",                      desc = "新建文件(夹)" },
 	{ on = [ "r", "n" ],  run = "rename --cursor=before_ext",  desc = "重命名" },
 	{ on = [ ";" ],       run = "shell --interactive",         desc = "打开shell窗口不阻塞" },
@@ -75,7 +75,7 @@ keymap = [
 	{ on = [ "c", "s" ], run = "copy name_without_ext", desc = "复制stem" },
   # 复制粘贴文件
   { on = [ "y" ],         run = "yank",           desc = "Copy the selected files" },
-	{ on = [ "x" ],         run = "yank --cut",     desc = "Cut the selected files" },
+	{ on = [ "d" ],         run = "yank --cut",     desc = "Cut the selected files" },
 	{ on = [ "p" ],         run = "paste",          desc = "Paste the files" },
 	{ on = [ "P" ],         run = "paste --follow", desc = "Paste the files (overwrite if the destination exists)" },
 
@@ -168,8 +168,8 @@ keymap = [
 	{ on = [ "P" ], run = "paste --before", desc = "Paste the copied characters before the cursor" },
 
 	# 撤销重做
-	{ on = [ "r" ], run = "undo", desc = "Undo the last operation" },
-	{ on = [ "R" ], run = "redo", desc = "Redo the last operation" },
+	{ on = [ "u" ], run = "undo", desc = "Undo the last operation" },
+	{ on = [ "U" ], run = "redo", desc = "Redo the last operation" },
 	# 帮助
 	{ on = [ "h" ], run = "help", desc = "Open help" }
 ]

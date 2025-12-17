@@ -68,6 +68,6 @@ pacman -S --needed --noconfirm fcitx5-im fcitx5-chinese-addons
 ## 浏览器
 pacman -S --needed --noconfirm firefox
 ## 字体管理器及字体
-pacman -S --needed --noconfirm font-manager ttf-ubuntu-mono-nerd
-
-# yay -S ttf-lxgw-wenkai-mono-nerd
+pacman -S --needed --noconfirm font-manager ttf-ubuntu-mono-nerd wqy-microhei
+## 使用font-manager手动安装字体
+## 字体路径: /const/workflow/homeDir/dotLocal/fonts/LXGWWenKaiMonoScreen.ttf

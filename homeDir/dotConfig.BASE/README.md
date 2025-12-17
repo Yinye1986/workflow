@@ -7,8 +7,19 @@
 
 使用 `git merge-file myConf old new` 即可三方合并, 保留改动的同时融合新版本配置中的新项目
 
+# 使用脚本一键完成
+
+新配置放入dotConfig.NEW
+
+会自动三方合并并更新BASE
+
 # 维护列表
 
+## niri
+
+示例配置: https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
+
+上次修改:
 
 ## yazi
 

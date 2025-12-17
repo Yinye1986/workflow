@@ -1,4 +1,4 @@
-theme = "bogster"
+theme = "gruvbox_dark_soft"
 
 [editor]
 line-number = "relative"              # 行号显示方式: relative, absolute
@@ -30,7 +30,7 @@ atomic-save = true                    # 原子寫入
 indent-heuristic = "hybrid"           # - "simple", "tree-sitter", "hybrid" 複製上行, 語法樹, 混合
 default-line-ending = "native"        # "lf", "crlf", "cr", "ff", "nel", "native" WINDOWS: CRLF, OTHER: LF
 auto-format = true                    # 格式化 需要自设对应语言的formatter
-# 補全
+# 补全
 auto-completion = true                # 自动弹出补全菜单
 auto-info = true                      # 自動顯示補全項的相關信息(函數簽名)
 popup-border = "all"                  # 补全样式 none popup menu all
@@ -40,7 +40,7 @@ preview-completion-insert = false     # 选中补全项目时是否立即插入�
 completion-replace = false            # 补全时是否替换整个单词（true）还是仅替换光标前部分（false）
 path-completion = true                # 路径补全
 # 用于跳转标签（如 f/F/t/T 或 easymotion）的双字符标签字母表，前面的字母优先使用（建议使用易按键的字母）
-jump-label-alphabet = "arstneiodhjluygpfwbkvmcxzq"
+jump-label-alphabet = "anresitodhjgbvkplcmfuwyqzx"
 # 行尾诊断信息的最低严重等级 "error"、"warning", "info", "hint", "disable"
 end-of-line-diagnostics = "error"
 # 是否读取 .editorconfig 文件中的设置（如缩排风格、行尾符等）
@@ -55,61 +55,81 @@ insert = "bar"                        # 插入模式光标形状
 normal = "block"                      # 正常模式光标形状
 select = "underline"                  # 选择模式光标形状
 
-[keys.insert]
-C-u = "move_line_up"
-C-e = "move_line_down"
-C-n = "move_char_left"
-C-i = "move_char_right"
-C-o = "normal_mode"
-esc = ["collapse_selection", "normal_mode"]
-# tab = "insert_tab"
-
-
 [keys.normal]
-u = "move_visual_line_up"
-e = "move_visual_line_down"
-n = "move_char_left"
-i = "move_char_right"
-C-u = "page_cursor_half_up"
-C-e = "page_cursor_half_down"
-C-n = "move_prev_word_start"
-C-i = "move_next_word_end"
-esc = ["collapse_selection", "keep_primary_selection"]
-ret = ["move_line_down", "goto_first_nonwhitespace"]
-"A-u" = "copy_selection_on_prev_line"
-"A-e" = "copy_selection_on_next_line"
 # mode
+esc = ["collapse_selection", "keep_primary_selection"]
+"C-'" = ["collapse_selection", "keep_primary_selection"]
 a = { a = "append_mode", i = "insert_mode", A = "insert_at_line_end", I = "insert_at_line_start" }
-V = "extend_line_below"
-";" = "command_mode"
-#
-C-w = ":buffer-close!"
-g = { n = "goto_previous_buffer", i = "goto_next_buffer"}
 
-# goto
+# Movement
+n = "move_char_left"
+e = "move_line_down"
+i = "move_line_up"
+o = "move_char_right"
+C-n = "move_prev_word_end"
+C-o = "move_next_word_start"
+C-e = "half_page_down"
+C-i = "half_page_up"
+C-s = "save_selection"
+ret = ["move_line_down", "goto_first_nonwhitespace"]
+# Changes
+P = "replace_with_yanked"
+"A-c" = "switch_to_lowercase"
+"'" = "open_below"
+'"' = "open_above"
+D = "delete_selection_noyank"
+# Selection manipulation
+"A-e" = "copy_selection_on_next_line"
+"A-i" = "copy_selection_on_prev_line"
+C-a = "select_all"
+V = "extend_line_below"
+# Minor modes
+## Goto mode
 G = "goto_last_line"
 0 = "goto_line_start"
-# search
+"A-n" = "goto_previous_buffer"
+"A-o" = "goto_next_buffer"
+f = "goto_word"
+# Search
+"/" = "search"
+"?" = "rsearch"
 l = "search_next"
 L = "search_prev"
-# other
-C-s = ":w"
-D = "delete_selection_noyank"
-P = "replace_with_yanked"
-r = "undo"
-R = "redo"
-"A-c" = "switch_to_lowercase"
-# action
+# ?
+C-w = ":buffer-close!"
 c = { c = "code_action", f = ":format" }
 
 
 [keys.select]
-esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
-0 = "goto_line_start"
-u = "move_visual_line_up"
-e = "move_visual_line_down"
-n = "move_char_left"
-i = "move_char_right"
-G = "goto_last_line"
 # mode
-C-o = "normal_mode"
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+"C-'" = "normal_mode"
+
+# Movement
+n = "extend_char_left"
+e = "extend_line_down"
+i = "extend_line_up"
+o = "extend_char_right"
+C-n = "extend_prev_word_end"
+C-o = "extend_next_word_start"
+C-e = "page_cursor_half_down"
+C-i = "page_cursor_half_up"
+# Minor modes
+## Goto mode
+G = "extend_to_last_line"
+0 = "goto_line_start"
+f = "extend_to_word"
+# Search
+l = "extend_search_next"
+L = "extend_search_prev"
+
+[keys.insert]
+# mode
+esc = ["collapse_selection", "normal_mode"]
+"C-'" = "normal_mode"
+
+# Movement
+C-n = "move_char_left"
+C-e = "move_line_down"
+C-i = "move_line_up"
+C-o = "move_char_right"

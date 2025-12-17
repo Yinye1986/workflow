@@ -19,7 +19,7 @@ alias la="ls -lah"
 alias lld="lsblk"
 alias llu="lsusb"
 
-# TUI工具
+# 工具别名
 #==================================================================================
 alias lg="lazygit"
 alias hx='helix'
@@ -49,7 +49,12 @@ function u4d
     curl -F "file=@-;filename=.$argv[1]" https://x0.at/
 end
 
-# 专用命令
+# stm32开发
 #=======================================================
 # alias e='sudo st-flash erase'
 # alias w='sudo st-flash write build/main.bin 0x8000000'
+
+# whose
+function whose
+    type -p $argv[1] | xargs pacman -Qo
+end
