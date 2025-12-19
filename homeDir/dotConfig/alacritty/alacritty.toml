@@ -10,7 +10,7 @@ ipc_socket = true          # 启用 IPC, 允许通过 alacritty msg 命令与 Al
 AAA_TIPS='可以用alacritty配置env'
 
 [window]
-dimensions = { columns = 120, lines = 80 }
+dimensions = { columns = 120, lines = 36 }
 position = "None" # { x = 0, y = 0 } # wm管理
 padding = { x = 0, y = 0 } # 边距
 dynamic_padding = true     # 均匀填充
