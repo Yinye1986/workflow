@@ -21,10 +21,6 @@ binds {
     Mod+E     { focus-window-or-workspace-down; }
     Mod+I     { focus-window-or-workspace-up; }
     Mod+O     { focus-column-right; }
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Shift+WheelScrollDown                { focus-column-right; }
-    Mod+Shift+WheelScrollUp                  { focus-column-left; }
     Mod+Shift+Left  { move-column-left; }
     Mod+Shift+Down  { move-window-down; }
     Mod+Shift+Up    { move-window-up; }
@@ -33,6 +29,12 @@ binds {
     Mod+Shift+E     { move-window-down-or-to-workspace-down; }
     Mod+Shift+I     { move-window-up-or-to-workspace-up; }
     Mod+Shift+O     { move-column-right; }
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+WheelScrollDown                { focus-column-right; }
+    Mod+Shift+WheelScrollUp                  { focus-column-left; }
+    Mod+Shift+Comma  { consume-or-expel-window-left; }
+    Mod+Shift+Period { consume-or-expel-window-right; }
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -72,11 +74,13 @@ binds {
     Mod+apostrophe repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // 截图
+    // F1~F12
+    Mod+F1 { spawn "dolphin"; }
     F2 { screenshot; }
-    Mod+F3 { spawn "firefox"; }
-    Mod+F2 { screenshot-screen; }
     Alt+F2 { screenshot-window; }
+    Mod+F2 { screenshot-screen; }
+
+    Mod+F3 { spawn "firefox"; }
 
     // 启停
     Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
@@ -91,13 +95,11 @@ binds {
 
 
 
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    // Mod+Period { expel-window-from-column; }
 
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }

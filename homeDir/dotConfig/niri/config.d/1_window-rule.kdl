@@ -16,6 +16,8 @@ window-rule {
     match app-id="Alacritty" title="btop"
     // 文件管理器
     match app-id="org.kde.dolphin"
+    // 授权
+    match app-id="polkit-gnome-authentication-agent-1"
 
 
     open-maximized false
