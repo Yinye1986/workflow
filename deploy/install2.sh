@@ -29,12 +29,14 @@ pacman -S --needed --noconfirm brightnessctl
 # 窗口管理器及其生态
 #===============================
 # systemctl enable greetd
-## sway
-pacman -S --needed --noconfirm sway swaybg
 ## 兼容层
 pacman -S --needed --noconfirm xorg-xwayland
+## sway
+# pacman -S --needed --noconfirm sway swaybg
 ## hyprland
 # pacman -S --needed --noconfirm hyprland hyprpaper hyprlock
+## niri
+pacman -S --needed --noconfirm niri swaybg
 ## bar
 pacman -S --needed --noconfirm waybar
 ## polkit
@@ -44,9 +46,9 @@ pacman -S --needed --noconfirm mako libnotify
 ## 剪切板支持
 pacman -S --needed --noconfirm wl-clipboard cliphist
 ## 启动器
-pacman -S --needed --noconfirm fuzzel swappy
-## 截图选取
-pacman -S --needed --noconfirm grim slurp
+pacman -S --needed --noconfirm fuzzel
+## 截图
+pacman -S --needed --noconfirm grim slurp swappy
 
 
 # 应用程序

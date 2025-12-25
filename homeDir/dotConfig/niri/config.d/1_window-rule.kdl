@@ -19,6 +19,9 @@ window-rule {
     // 授权
     match app-id="polkit-gnome-authentication-agent-1"
 
+    // 弹出式窗口
+    match app-id="Marktext" title=""
+
 
     open-maximized false
     open-floating true

@@ -16,7 +16,6 @@ rm -rf $HOME/.config/fish
 rm -rf $HOME/.config/helix
 rm -rf $HOME/.config/hypr
 rm -rf $HOME/.config/mako
-rm -rf $HOME/.config/mihomo
 rm -rf $HOME/.config/niri
 rm -rf $HOME/.config/nvim_clear
 rm -rf $HOME/.config/pip
@@ -32,7 +31,6 @@ ln -sf /const/workflow/homeDir/dotConfig/fish $HOME/.config/fish
 ln -sf /const/workflow/homeDir/dotConfig/helix $HOME/.config/helix
 ln -sf /const/workflow/homeDir/dotConfig/hypr $HOME/.config/hypr
 ln -sf /const/workflow/homeDir/dotConfig/mako $HOME/.config/mako
-ln -sf /const/workflow/homeDir/dotConfig/mihomo $HOME/.config/mihomo
 ln -sf /const/workflow/homeDir/dotConfig/niri $HOME/.config/niri
 ln -sf /const/workflow/homeDir/dotConfig/nvim_clear $HOME/.config/nvim_clear
 ln -sf /const/workflow/homeDir/dotConfig/pip $HOME/.config/pip

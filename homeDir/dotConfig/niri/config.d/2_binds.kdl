@@ -77,7 +77,7 @@ binds {
     // F1~F12
     Mod+F1 { spawn "dolphin"; }
     F2 { screenshot; }
-    Alt+F2 { screenshot-window; }
+    // Alt+F2 { screenshot-window; }
     Mod+F2 { screenshot-screen; }
 
     Mod+F3 { spawn "firefox"; }

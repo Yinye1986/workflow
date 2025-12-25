@@ -95,6 +95,7 @@ f = "goto_word"
 "?" = "rsearch"
 l = "search_next"
 L = "search_prev"
+"C-/" = "search_selection"
 # ?
 C-w = ":buffer-close!"
 c = { c = "code_action", f = ":format" }
@@ -122,14 +123,21 @@ f = "extend_to_word"
 # Search
 l = "extend_search_next"
 L = "extend_search_prev"
+"C-/" = "search_selection"
 
 [keys.insert]
 # mode
 esc = ["collapse_selection", "normal_mode"]
 "C-'" = "normal_mode"
-
 # Movement
 C-n = "move_char_left"
 C-e = "move_line_down"
 C-i = "move_line_up"
 C-o = "move_char_right"
+# Minor modes
+## Goto mode
+C-G = "goto_last_line"
+# Changes
+# Search
+C-l = "search_next"
+C-L = "search_prev"
