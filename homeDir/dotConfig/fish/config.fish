@@ -12,12 +12,11 @@ alias sn="shutdown now"
 
 # 终端shell操作
 #==============
+# alias !!=""
 alias :q="exit"
-
-alias ll="ls -lh"
 alias la="ls -lah"
-alias lld="lsblk"
-alias llu="lsusb"
+alias lb="lsblk"
+alias lu="lsusb"
 
 # 工具别名
 #==================================================================================

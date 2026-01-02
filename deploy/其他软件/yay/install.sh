@@ -2,4 +2,6 @@
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+GO111MODULE=on GOPROXY=https://goproxy.cn makepkg -si
+cd ..
+rm -rf yay

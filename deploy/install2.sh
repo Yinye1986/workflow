@@ -19,7 +19,7 @@ pacman -S --needed --noconfirm networkmanager network-manager-applet
 ## 蓝牙
 pacman -S --needed --noconfirm bluez bluez-utils
 systemctl enable bluetooth
-## 显示背光
+## 亮度控制
 pacman -S --needed --noconfirm brightnessctl
 ## USB
 # pacman -S --needed --noconfirm usb_modeswitch usbutils
@@ -28,8 +28,10 @@ pacman -S --needed --noconfirm brightnessctl
 
 # 窗口管理器及其生态
 #===============================
+## greet (需要修改配置文件 command="tuigreet --cmd niri-session")
+# sudo pacman -S --needed --noconfirm greetd greetd-tuigreet
 # systemctl enable greetd
-## 兼容层
+## 兼容层 (有的 wm 自启动, 有的自己启动, niri使用 xwayland-satellite 作为包装)
 pacman -S --needed --noconfirm xorg-xwayland
 ## sway
 # pacman -S --needed --noconfirm sway swaybg
@@ -39,10 +41,10 @@ pacman -S --needed --noconfirm xorg-xwayland
 pacman -S --needed --noconfirm niri swaybg
 ## bar
 pacman -S --needed --noconfirm waybar
-## polkit
+## polkit (需要在 wm 启动时启动, 一般在 wm 配置文件中配置自启动)
 pacman -S --needed --noconfirm polkit polkit-gnome
 ## 通知组件
-pacman -S --needed --noconfirm mako libnotify
+pacman -S --needed --noconfirm libnotify mako
 ## 剪切板支持
 pacman -S --needed --noconfirm wl-clipboard cliphist
 ## 启动器
@@ -61,6 +63,7 @@ pacman -S --needed --noconfirm fish
 pacman -S --needed --noconfirm yazi # lazygit
 pacman -S --needed --noconfirm helix
 pacman -S --needed --noconfirm fzf
+### 安卓工具
 pacman -S --needed --noconfirm android-tools scrcpy
 ### 仪表盘
 pacman -S --needed --noconfirm btop fastfetch

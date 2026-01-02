@@ -3,14 +3,13 @@
 rm -rf $HOME/.bash_profile
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
-rm -rf $HOME/.npmrc
+rm -rf $HOME/.screenrc
 ln -sf /const/workflow/homeDir/.bash_profile $HOME/.bash_profile
 ln -sf /const/workflow/homeDir/.bashrc $HOME/.bashrc
 ln -sf /const/workflow/homeDir/.gitconfig $HOME/.gitconfig
-ln -sf /const/workflow/homeDir/.npmrc $HOME/.npmrc
+ln -sf /const/workflow/homeDir/.screenrc $HOME/.screenrc
 
 rm -rf $HOME/.config/alacritty
-rm -rf $HOME/.config/environment.d
 rm -rf $HOME/.config/fcitx5
 rm -rf $HOME/.config/fish
 rm -rf $HOME/.config/helix
@@ -25,7 +24,6 @@ rm -rf $HOME/.config/yazi
 
 mkdir -p $HOME/.config
 ln -sf /const/workflow/homeDir/dotConfig/alacritty $HOME/.config/alacritty
-ln -sf /const/workflow/homeDir/dotConfig/environment.d $HOME/.config/environment.d
 ln -sf /const/workflow/homeDir/dotConfig/fcitx5 $HOME/.config/fcitx5
 ln -sf /const/workflow/homeDir/dotConfig/fish $HOME/.config/fish
 ln -sf /const/workflow/homeDir/dotConfig/helix $HOME/.config/helix
