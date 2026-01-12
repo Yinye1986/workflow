@@ -1,10 +1,5 @@
 fastfetch
 set -g fish_greeting ""
-if status is-interactive
-    # cmd
-else
-    # cmd
-end
 
 # 系统操作
 #======================
@@ -57,3 +52,5 @@ end
 function whose
     type -p $argv[1] | xargs pacman -Qo
 end
+
+echo a

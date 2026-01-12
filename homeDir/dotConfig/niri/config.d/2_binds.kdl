@@ -63,8 +63,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+M       { toggle-window-floating; }
-    Mod+Shift+M { switch-focus-between-floating-and-tiling; }
+    Mod+M { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+M       { toggle-window-floating; }
     Mod+C { center-column; }
     Mod+Shift+C { toggle-column-tabbed-display; }
     Mod+Minus { set-column-width "-10%"; }

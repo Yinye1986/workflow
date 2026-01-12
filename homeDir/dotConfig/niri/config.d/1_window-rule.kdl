@@ -23,6 +23,10 @@ window-rule {
     match app-id="Marktext" title=""
 
 
+    // kicad
+    match app-id="kicad" title=r#"— 符号编辑器$"#
+
+
     open-maximized false
     open-floating true
 }

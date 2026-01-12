@@ -76,9 +76,6 @@ function fish_prompt
         _nim_prompt_wrapper $retc '' (date +%X)
     
         # Vi-mode
-        # The default mode prompt would be prefixed, which ruins our alignment.
-        function fish_mode_prompt
-        end
     
         if test "$fish_key_bindings" = fish_vi_key_bindings
                 or test "$fish_key_bindings" = fish_hybrid_key_bindings
@@ -90,7 +87,6 @@ function fish_prompt
                                 set mode (set_color --bold green)I
                         case replace_one
                                 set mode (set_color --bold green)R
-                                echo '[R]'
                         case replace
                                 set mode (set_color --bold cyan)R
                         case visual

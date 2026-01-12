@@ -38,6 +38,7 @@ keymap = [
 	{ on = [ "g", "s" ],       run = "cd /const/workflow/homeDir/dotLocal/scripts"},
 	{ on = [ "g", "d" ],       run = "cd ~/下载"},
 	{ on = [ "g", "m" ],       run = "cd /run/media" },
+	{ on = [ "g", "." ],       run = "cd /home/shins0u/AAA/notes/高等数学" },
 	# 多标签
 	{ on = [ "<C-t>" ], run = "tab_create", desc = "创建tab" },
 	{ on = [ "<C-w>" ], run = "close",      desc = "关闭tab" },
@@ -57,7 +58,7 @@ keymap = [
 
 
 	# 文件操作
-	{ on = [ "o" ],       run = "open --interactive ",         desc = "打开方式" },
+	{ on = [ "'" ],       run = "open --interactive ",         desc = "打开方式" },
 	{ on = [ "<Enter>" ], run = "open",                        desc = "打开" },
 	{ on = [ "-" ],       run = "link",                        desc = "Symlink the absolute path of files" },
 	{ on = [ "_" ],       run = "link --relative",             desc = "Symlink the relative path of files" },

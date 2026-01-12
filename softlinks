@@ -3,11 +3,9 @@
 rm -rf $HOME/.bash_profile
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
-rm -rf $HOME/.screenrc
 ln -sf /const/workflow/homeDir/.bash_profile $HOME/.bash_profile
 ln -sf /const/workflow/homeDir/.bashrc $HOME/.bashrc
 ln -sf /const/workflow/homeDir/.gitconfig $HOME/.gitconfig
-ln -sf /const/workflow/homeDir/.screenrc $HOME/.screenrc
 
 rm -rf $HOME/.config/alacritty
 rm -rf $HOME/.config/fcitx5
@@ -19,6 +17,7 @@ rm -rf $HOME/.config/niri
 rm -rf $HOME/.config/nvim_clear
 rm -rf $HOME/.config/pip
 rm -rf $HOME/.config/sway
+rm -rf $HOME/.config/tmux
 rm -rf $HOME/.config/waybar
 rm -rf $HOME/.config/yazi
 
@@ -33,6 +32,7 @@ ln -sf /const/workflow/homeDir/dotConfig/niri $HOME/.config/niri
 ln -sf /const/workflow/homeDir/dotConfig/nvim_clear $HOME/.config/nvim_clear
 ln -sf /const/workflow/homeDir/dotConfig/pip $HOME/.config/pip
 ln -sf /const/workflow/homeDir/dotConfig/sway $HOME/.config/sway
+ln -sf /const/workflow/homeDir/dotConfig/tmux $HOME/.config/tmux
 ln -sf /const/workflow/homeDir/dotConfig/waybar $HOME/.config/waybar
 ln -sf /const/workflow/homeDir/dotConfig/yazi $HOME/.config/yazi
 
