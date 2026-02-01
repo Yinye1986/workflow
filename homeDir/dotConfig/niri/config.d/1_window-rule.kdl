@@ -1,0 +1,48 @@
+window-rule {
+    // 应用程序
+    match app-id=r#"^QQ$"#
+
+    // 音频
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+    // 蓝牙
+    match app-id=r#"^blueman-manager$"#
+    // 网络
+    match app-id=r#"^com\.follow\.clash$"#
+    // 输入法
+    match app-id=r#"^org\.fcitx\.fcitx5-config-qt$"#
+    // 字体管理
+    match app-id="font-manager"
+    // 任务管理器
+    match app-id="Alacritty" title="btop"
+    // 文件管理器
+    match app-id="org.kde.dolphin"
+    // 授权
+    match app-id="polkit-gnome-authentication-agent-1"
+
+    // 弹出式窗口
+    match app-id="Marktext" title=""
+
+
+    // kicad
+    match app-id="kicad" title=r#"— 符号编辑器$"#
+
+
+    open-maximized false
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+}
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}

@@ -1,0 +1,84 @@
+@import "./color.css";
+
+* {
+    border: none;
+    font-family: "UbuntuMono Nerd Font";
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    margin: 1px;
+}
+
+#waybar {
+    background: @base00;
+}
+
+tooltip {
+    background-color: @base00;
+    font-size: 2px;
+    color: @base05;
+}
+tooltip label {
+    margin: 2px;
+}
+
+/* left */
+/* taskbar */
+#taskbar{
+    background-color: @base00;
+    border-radius: 4px;
+}
+#taskbar button {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: @base01;
+    color: @base05;
+}
+#taskbar button.active {
+    background-color: @base02;
+}
+
+
+#mode {
+
+}
+
+
+/* Center */
+#clock {
+    color: @base05;
+    background-color: @base00;
+}
+
+/* right */
+#network,
+#cpu,
+#memory,
+#battery,
+#temperature,
+#idle_inhibitor,
+#wireplumber,
+#backlight,
+#tray {
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: @base05;
+    background-color: @base01;
+}
+
+
+/* 报警样式 */
+#battery.warning {
+    color: @base0A;
+}
+#cpu.critical,
+#memory.critical,
+#temperature.critical,
+#battery.critical {
+    color: @base0A;
+}
+#battery.urgent {
+    color: @base0A;
+}

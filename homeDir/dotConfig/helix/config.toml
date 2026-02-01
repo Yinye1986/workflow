@@ -1,0 +1,109 @@
+theme = "gruvbox_dark_soft"
+
+[editor]
+scrolloff = 0
+default-yank-register = '+'
+line-number = "relative"
+cursorline = true
+rulers = [ 80, 120 ]
+bufferline = "multiple"
+color-modes = true
+trim-final-newlines = true
+trim-trailing-whitespace = true
+jump-label-alphabet = "anresitodhjgbvkplcmfuwyqzx"
+clipboard-provider = "wayland"
+end-of-line-diagnostics = "info"
+
+[editor.indent-guides]
+render = true
+skip-levels = 2
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[keys.normal]
+# mode
+esc = ["collapse_selection", "keep_primary_selection"]
+"C-'" = ["collapse_selection", "keep_primary_selection"]
+a = { a = "append_mode", i = "insert_mode", A = "insert_at_line_end", I = "insert_at_line_start" }
+
+# Movement
+n = "move_char_left"
+e = "move_line_down"
+i = "move_line_up"
+o = "move_char_right"
+C-n = "move_prev_word_start"
+C-o = "move_next_word_end"
+C-e = "half_page_down"
+C-i = "half_page_up"
+C-s = "save_selection"
+ret = ["move_line_down", "goto_first_nonwhitespace"]
+# Changes
+P = "replace_with_yanked"
+"A-c" = "switch_to_lowercase"
+"'" = "open_below"
+'"' = "open_above"
+D = "delete_selection_noyank"
+# Selection manipulation
+"A-e" = "copy_selection_on_next_line"
+"A-i" = "copy_selection_on_prev_line"
+C-a = "select_all"
+V = "extend_line_below"
+# Minor modes
+## Goto mode
+G = "goto_last_line"
+0 = "goto_line_start"
+"A-n" = "goto_previous_buffer"
+"A-o" = "goto_next_buffer"
+f = "goto_word"
+# Search
+"/" = "search"
+"?" = "rsearch"
+l = "search_next"
+L = "search_prev"
+"C-/" = "search_selection"
+# ?
+C-w = ":buffer-close!"
+c = { c = "code_action", f = ":format" }
+
+
+[keys.select]
+# mode
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+"C-'" = "normal_mode"
+
+# Movement
+n = "extend_char_left"
+e = "extend_line_down"
+i = "extend_line_up"
+o = "extend_char_right"
+C-n = "extend_prev_word_start"
+C-o = "extend_next_word_end"
+C-e = "page_cursor_half_down"
+C-i = "page_cursor_half_up"
+# Minor modes
+## Goto mode
+G = "extend_to_last_line"
+0 = "goto_line_start"
+f = "extend_to_word"
+# Search
+l = "extend_search_next"
+L = "extend_search_prev"
+"C-/" = "search_selection"
+
+[keys.insert]
+# mode
+esc = ["collapse_selection", "normal_mode"]
+"C-'" = "normal_mode"
+# Movement
+C-n = "move_char_left"
+C-e = "move_line_down"
+C-i = "move_line_up"
+C-o = "move_char_right"
+# Minor modes
+## Goto mode
+C-G = "goto_last_line"
+# Changes
+# Search
+C-l = "search_next"
+C-L = "search_prev"

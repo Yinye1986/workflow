@@ -1,0 +1,10 @@
+{
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 15,
+    "icon-theme": "Everforest-Dark",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "tooltip-format": "{title}"
+  },
+}

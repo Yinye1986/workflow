@@ -1,0 +1,29 @@
+set $volume_up adb shell input keyevent 24
+set $volume_down adb shell input keyevent 25
+set $volume_mute adb shell input keyevent KEYCODE_VOLUME_MUTE
+set $brightness_up adb shell input keyevent 221
+set $brightness_down adb shell input keyevent 220
+set $video_pause adb shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE
+set $wakeup adb shell input keyevent KEYCODE_WAKEUP
+
+set $mode_streamdeck "\
+<span foreground='$color1'><b>󰕾 Shift:</b></span> \
+<span foreground='$color1'><b>󰃠  Ctrl:</b></span> \
+<span foreground='$color1'><b>󰐎 Space:</b></span>󱁐 "
+
+
+mode --pango_markup $mode_streamdeck {
+	$bindsym Shift+u exec $volume_up
+	$bindsym Shift+e exec $volume_down
+	$bindsym m exec $volume_mute
+	$bindsym Control+u exec $brightness_up
+	$bindsym Control+e exec $brightness_down
+	$bindsym Shift+Up exec $volume_up
+	$bindsym Shift+Down exec $volume_down
+	$bindsym Control+Up exec $brightness_up
+	$bindsym Control+Down exec $brightness_down
+	$bindsym Space exec $video_pause
+	$bindsym Control+Space exec $wakeup
+    $bindsym Escape mode "default"
+}
+$bindsym $mod+F2 mode $mode_streamdeck

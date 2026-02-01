@@ -1,0 +1,34 @@
+{
+  // "layer": "top",
+  // "position": "top",
+  "modules-left": [
+    "wlr/taskbar",
+    "sway/mode",
+  ],
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right": [
+    "group/sysinfo",
+    "idle_inhibitor",
+    "wireplumber#sink",
+    "wireplumber#source",
+    "backlight",
+    "tray",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+  ],
+  "include": [
+    "./modules/left.jsonc",
+    "./modules/center.jsonc",
+    "./modules/rightGroupInfo.jsonc",
+    "./modules/right.jsonc",
+  ],
+}
+
+    // "hyprland/workspaces",
+    // "sway/workspaces",
+    // "hyprland/window",

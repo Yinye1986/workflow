@@ -1,0 +1,133 @@
+[env]
+
+[window]
+decorations = "none"
+opacity = 0.8
+decorations_theme_variant = "dark"
+level = "Normal"
+
+[scrolling]
+history    = 10000 # 滚动回溯缓冲区
+multiplier = 6     # 滚动行数
+
+[font]
+normal              = { family = "UbuntuMono Nerd Font", style = "Regular" }
+size                = 17
+
+
+[colors.primary]
+# hard contrast background = = '#1d2021'
+background = '#282828'
+# soft contrast background = = '#32302f'
+foreground = '#ebdbb2'
+
+[colors.cursor]
+# text = "#000000"
+# cursor = "#ffb6c1"
+
+# Normal colors
+[colors.normal]
+black   = '#282828'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#a89984'
+
+# Bright colors
+[colors.bright]
+black   = '#928374'
+red     = '#fb4934'
+green   = '#b8bb26'
+yellow  = '#fabd2f'
+blue    = '#83a598'
+magenta = '#d3869b'
+cyan    = '#8ec07c'
+white   = '#ebdbb2'
+
+
+# [bell]
+# animation = "EaseOutCirc" # 可以替换为你喜欢的动画效果
+# duration  = 1000 # 可以替换为你喜欢的持续时间，如果你想禁用动画，可以设置为0
+# color     = "#f1f254" # 可以替换为你喜欢的颜色
+# command   = { program = "notify-send", args = [ "bell", ] } # 可以替换为你想要执行的命令，如果你不想执行任何命令，可以设置为"None"
+
+[selection]
+save_to_clipboard = true # 可以设置为true，这样选中的文本就会被复制到主剪贴板
+
+[cursor]
+# 全默认故无显式声明
+
+# [terminal]
+# shell = { program = "/bin/fish", args = [ "-l",]}
+
+[terminal.shell]
+program = "/bin/fish"
+args = [ "-l" ]
+
+
+
+[mouse]
+hide_when_typing = true # 可以设置为true，这样输入时光标会暂时隐藏
+bindings         = [
+    { mouse = "Right", action = "ExpandSelection" },
+#    { mouse = "Forward", mods = "Control", action = "" },
+#    { mouse = "Back", mods = "Control", action = "" }
+]
+
+# HINTS部分记录了配置文件的[hints]表。
+
+# Terminal hints可以用来在终端的可见部分找到文本或超链接，并将其传输给其他应用程序。
+
+# alphabet字段表示用于提示标签的键。
+# 默认值："jfkdls;ahgurieowpq"
+# alphabet = "<string>"
+
+# enabled字段是一个数组，包含所有可用的提示。
+# 每个提示必须至少有一个regex或hyperlinks，以及一个action或command。
+# enabled = [{ regex = "<regex>", hyperlinks = "<hyperlinks>", post_processing = "<post_processing>", persist = "<persist>", action = "<action>", command = "<command>", binding = "<binding>", mouse = "<mouse>" },]
+
+# regex字段表示每行将与之比较的正则表达式。
+
+# hyperlinks字段表示当为true时，所有OSC 8转义序列超链接将包含在提示中。
+
+# post_processing字段表示当为true时，如果有字符可能不是提示的一部分（例如，尾随的.），将使用启发式方法缩短匹配。这对URI最有用，仅适用于正则表达式匹配。
+
+# persist字段表示当为true时，提示在选择后保持持久。
+
+# action字段表示动作。可以是"Copy"，"Paste"，"Select"，"MoveViModeCursor"中的一个。
+
+# command字段表示当提示被点击或通过绑定选择时将执行的命令。提示的文本总是作为最后一个参数附加。
+
+# binding字段表示用于启动键盘提示选择过程的键绑定。
+
+# mouse字段表示鼠标设置。enabled字段控制是否在按下所有mods并悬停在提示文本上时下划线提示。
+
+[keyboard]
+bindings = [
+    { key = "Enter", mods = "Control", action = "ToggleViMode" },
+
+    # vi mode
+    { key = "n", mode = "Vi|~Search", action = "Left" },
+    { key = "e", mode = "Vi|~Search", action = "Down" },
+    { key = "i", mode = "Vi|~Search", action = "Up" },
+    { key = "o", mode = "Vi|~Search", action = "Right" },
+    { key = "y", mode = "Vi|~Search", action = "Copy" },
+    # normal mode
+    # { key = "n", mods = "Alt", chars = "\u001b[D" },
+    # { key = "e", mods = "Alt", chars = "\u001b[B" },
+    # { key = "i", mods = "Alt", chars = "\u001b[A" },
+    # { key = "o", mods = "Alt", chars = "\u001b[C" },
+    { key = "y", mods = "Control", action = "Copy" },
+    { key = "p", mods = "Control", action = "Paste" },
+
+    # { key = "L", mode = "Vi|~Search", action = "SearchNext" },
+    # { key = "L", mode = "Vi|~Search", mods = "Shift", action = "SearchPrevious" },
+
+    # { key = "=", mods = "Control", action = "IncreaseFontSize" },
+    # { key = "-", mods = "Control", action = "DecreaseFontSize" },
+]
+
+# debug

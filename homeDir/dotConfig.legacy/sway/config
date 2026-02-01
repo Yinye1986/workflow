@@ -1,0 +1,38 @@
+# 主题
+set $theme ./themes/matcha-green
+include $theme/theme.conf
+include $HOME/.config/sway/definitions.d/theme.conf
+
+# 全局定义
+include ./definitions.d/definitions
+
+# 用户定义
+include ./definitions.d/apps
+
+# 系统输入
+include ./config.d/inputs.conf
+
+# 用户模式
+#===========================
+include ./modes.d/default
+include ./modes.d/resize
+include ./modes.d/screenshot
+include ./modes.d/streamdeck
+include ./modes.d/shutdown
+
+
+# only enable this if every app you use is compatible with wayland
+#=================
+# xwayland disable
+
+
+# 全局配置
+#==================================================
+include ./config.d/10-default.conf
+include ./config.d/20-autostart.conf
+
+
+# 用户配置
+#=================================
+include ./config.d/outputs.conf
+# include ./config.d/swaybar.conf

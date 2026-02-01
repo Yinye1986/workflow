@@ -1,0 +1,70 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant "colemak"
+            options "altwin:swap_lalt_lwin,lv3:ralt_alt"
+            model "pc105"
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+        numlock
+    }
+}
+output "DP-1" {
+    // off
+    mode "2560x1440@170.001"
+    scale 1.0
+    transform "normal"
+    position x=0 y=0
+    focus-at-startup
+    backdrop-color "#FFB6C1"
+    hot-corners {
+        bottom-left
+    }
+}
+output "eDP-1" {
+    // off
+    mode "2560x1660@120.001"
+    scale 1.7
+    transform "normal"
+    position x=2560 y=0
+    backdrop-color "#001100"
+    hot-corners {
+        bottom-left
+    }
+}
+
+
+workspace "Dashboard" {
+    open-on-output "DP-1"
+}
+layout {
+    empty-workspace-above-first
+    always-center-single-column
+    preset-column-widths {
+        proportion 0.5
+    }
+    preset-window-heights {
+        proportion 0.5
+    }
+    focus-ring {
+        off
+    }
+    insert-hint {
+        off
+    }
+    background-color "#FFB6C1"
+}
+
+
+include "./config.d/1_window-rule.kdl"
+include "./config.d/2_binds.kdl"
+
+
+spawn-at-startup "waybar"
+spawn-at-startup "swaybg" "-i" "/const/workflow/homeDir/dotLocal/wallpapers/Hawaiian Print.jpg" "-m" "fill"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
